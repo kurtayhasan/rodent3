@@ -1,0 +1,1 @@
+<template><section class='py-12 bg-white text-center'>Hakkımızda</section></template>
