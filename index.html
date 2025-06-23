@@ -2,225 +2,180 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Rodent Ağız & Diş Sağlığı</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rodent Ağız ve Diş Sağlığı</title>
+
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.16.3/css/uikit.min.css" />
+
+  <!-- Özel Stil Dosyası -->
   <link rel="stylesheet" href="css/style.css">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <!-- UIkit JS + Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.16.3/js/uikit.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.16.3/js/uikit-icons.min.js" defer></script>
+
+  <!-- Proje JS -->
+  <script src="js/script.js" defer></script>
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    <div class="container">
-      <span>
-        <a href="mailto:info@rodent.com.tr">
-          <i class="fas fa-envelope"></i> info@rodent.com.tr
-        </a>
-      </span>
-      <span>
-        <i class="fas fa-phone"></i> +90 545 502 8282
-      </span>
-      <div class="socials">
-        <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
-        <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
-      </div>
+  <!-- HEADER -->
+  <header class="uk-background-muted uk-padding-small">
+    <div class="uk-container uk-flex uk-flex-between uk-flex-middle">
+      <!-- Kurum Logosu -->
+      <a href="#" class="uk-logo">
+        <img src="images/logo.png" alt="Rodent Klinik Logo" width="180">
+      </a>
+
+      <!-- Masaüstü Menü -->
+      <nav class="uk-visible@s" uk-navbar>
+        <div class="uk-navbar-left">
+          <ul class="uk-navbar-nav">
+            <li><a href="#hakkimizda">Hakkımızda</a></li>
+            <li><a href="#vizyon">Vizyon &amp; Misyon</a></li>
+            <li><a href="#hizmetler">Hizmetler</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#randevu">Randevu</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Mobil Menü Butonu -->
+      <a class="uk-navbar-toggle uk-hidden@s" uk-toggle="target: #offcanvas-nav" uk-navbar-toggle-icon></a>
+    </div>
+  </header>
+
+  <!-- Mobil Off-canvas Menü -->
+  <div id="offcanvas-nav" uk-offcanvas="mode: slide; overlay: true">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+      <button class="uk-offcanvas-close" type="button" uk-close></button>
+      <ul class="uk-nav uk-nav-default uk-margin-top">
+        <li><a href="#hakkimizda">Hakkımızda</a></li>
+        <li><a href="#vizyon">Vizyon &amp; Misyon</a></li>
+        <li><a href="#hizmetler">Hizmetler</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#randevu">Randevu</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+      </ul>
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header class="navbar">
-    <div class="container header-inner">
-      <a href="#home" class="logo">
-        <img src="images/logo.svg" alt="Rodent">
-      </a>
-      <button class="menu-toggle" aria-label="Menüyü aç">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav-desktop">
-        <ul>
-          <li><a href="#home"><i class="fas fa-home"></i> Ana Sayfa</a></li>
-          <li><a href="#about"><i class="fas fa-info-circle"></i> Hakkımızda</a></li>
-          <li><a href="#vision"><i class="fas fa-eye"></i> Vizyon & Misyon</a></li>
-          <li><a href="#services"><i class="fas fa-tooth"></i> Hizmetler</a></li>
-          <li><a href="#gallery"><i class="fas fa-images"></i> Galeri</a></li>
-          <li><a href="#appointment"><i class="fas fa-calendar-alt"></i> Randevu</a></li>
-          <li><a href="#contact"><i class="fas fa-address-card"></i> İletişim</a></li>
-          <li><a href="#orgchart"><i class="fas fa-sitemap"></i> Organizasyon</a></li>
-        </ul>
-      </nav>
-    </div>
-    <nav class="nav-mobile">
-      <ul>
-        <li><a href="#home"><i class="fas fa-home"></i> Ana Sayfa</a></li>
-        <li><a href="#about"><i class="fas fa-info-circle"></i> Hakkımızda</a></li>
-        <li><a href="#vision"><i class="fas fa-eye"></i> Vizyon & Misyon</a></li>
-        <li><a href="#services"><i class="fas fa-tooth"></i> Hizmetler</a></li>
-        <li><a href="#gallery"><i class="fas fa-images"></i> Galeri</a></li>
-        <li><a href="#appointment"><i class="fas fa-calendar-alt"></i> Randevu</a></li>
-        <li><a href="#contact"><i class="fas fa-address-card"></i> İletişim</a></li>
-        <li><a href="#orgchart"><i class="fas fa-sitemap"></i> Organizasyon</a></li>
-      </ul>
-    </nav>
-    <div class="overlay"></div>
-  </header>
-
   <main>
 
-    <!-- HERO / SLIDER -->
-    <section id="home" class="hero">
-      <div class="slides">
-        <div class="slide" style="background-image:url('images/slider1.jpg')">
-          <div class="slide-content">
-            <h1>Konforlu Tedavi</h1>
-            <p>Lüks kliniğimizde sağlığınız emin ellerde.</p>
-            <a href="#services" class="btn">Hizmetlerimiz</a>
-          </div>
-        </div>
-        <div class="slide" style="background-image:url('images/slider2.jpg')">
-          <div class="slide-content">
-            <h1>Uzman Ekip</h1>
-            <p>Deneyimli kadromuzla güvende hissedin.</p>
-            <a href="#about" class="btn">Hakkımızda</a>
-          </div>
-        </div>
-        <!-- Gerekirse 3…7. sliderlar buraya -->
+    <!-- HAKKIMIZDA -->
+    <section id="hakkimizda" class="uk-section uk-section-default">
+      <div class="uk-container">
+        <h1>Hakkımızda</h1>
+        <p>Polikliniğimiz, diş hekimliğinin tüm branşlarının uygulandığı bir merkezdir.</p>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section about light-bg">
-      <div class="container grid-2">
-        <div class="about-text">
-          <h2><i class="fas fa-info-circle"></i> Rodent Hakkında</h2>
-          <p>Modern teknoloji ile donatılmış kliniğimiz, ağrısız ve güvenilir tedavi sunar.</p>
-          <a href="#contact" class="btn-outline">Bize Ulaşın</a>
-        </div>
-        <div class="about-image">
-          <img src="images/about.jpg" alt="Kliniğimiz">
+    <!-- VİZYON & MİSYON -->
+    <section id="vizyon" class="uk-section uk-section-muted">
+      <div class="uk-container">
+        <h2>Vizyon &amp; Misyon</h2>
+        <div class="uk-grid-small uk-child-width-1-2@s" uk-grid>
+          <div>
+            <h3>Vizyon</h3>
+            <p>“En ileri teknolojiyi kullanarak hastalarımıza konforlu ve güvenli tedavi sunmak.”</p>
+          </div>
+          <div>
+            <h3>Misyon</h3>
+            <p>“Hasta memnuniyetini her zaman en üst seviyede tutmak ve doğal gülüşler yaratmak.”</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Vision & Mission -->
-    <section id="vision" class="section vision">
-      <div class="container grid-2">
-        <div class="vm-block">
-          <h2><i class="fas fa-eye"></i> Vizyonumuz</h2>
-          <p>
-            Ağız ve diş sağlığı tedavilerini tüm uzmanlık dallarında;<br>
-            uluslararası standartlara uygunluğu onaylanmış yöntemlerle ve<br>
-            teknolojinin bütün olanaklarından yararlanarak toplumun her<br>
-            kesimine etkili, güvenli ve kesintisiz olarak hizmet sunmak,<br>
-            sürekli tercih edilen merkez olmak ve bölgesel model oluşturmaktır.
-          </p>
-        </div>
-        <div class="vm-block">
-          <h2><i class="fas fa-bullseye"></i> Misyonumuz</h2>
-          <p>
-            Tüm kaynaklarımızı etkin ve verimli bir şekilde kullanarak,<br>
-            hasta ve çalışan memnuniyetini sağlamak;<br>
-            merkezimizin tüm birimlerinde kalite anlayışını standardize<br>
-            ederek sürekli hale getirmektir.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="section services light-bg">
-      <div class="container">
-        <h2><i class="fas fa-tooth"></i> Hizmetlerimiz</h2>
-        <div class="grid-4">
-          <div class="card">
-            <img src="images/icon-estetik.svg" alt="Estetik Diş">
-            <h3>Estetik Diş</h3>
-            <p>Doğal gülüşünüzü yeniden kazandırıyoruz.</p>
-            <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
-              <img src="images/icon-instagram.svg" alt="Instagram">
-            </a>
-          </div>
-          <div class="card">
-            <img src="images/icon-implant.svg" alt="İmplant">
+    <!-- HİZMETLER -->
+    <section id="hizmetler" class="uk-section uk-section-default">
+      <div class="uk-container">
+        <h2>Hizmetlerimiz</h2>
+        <div class="uk-grid-small uk-child-width-1-3@s uk-grid-match" uk-grid>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <span uk-icon="icon: instagram" class="uk-margin-small-bottom"></span>
             <h3>İmplant</h3>
-            <p>Kalıcı diş eksikliği çözümleri sunuyoruz.</p>
-            <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
-              <img src="images/icon-instagram.svg" alt="Instagram">
-            </a>
+            <p>Kalıcı diş kökü çözümü.</p>
           </div>
-          <div class="card">
-            <img src="images/icon-ortodonti.svg" alt="Ortodonti">
-            <h3>Ortodonti</h3>
-            <p>Düzgün ve sağlıklı diş dizilimine odaklanıyoruz.</p>
-            <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
-              <img src="images/icon-instagram.svg" alt="Instagram">
-            </a>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <span uk-icon="icon: instagram" class="uk-margin-small-bottom"></span>
+            <h3>Porselen Kaplama</h3>
+            <p>Estetik ve dayanıklı.</p>
           </div>
-          <div class="card">
-            <img src="images/icon-protez.svg" alt="Protez">
-            <h3>Protez</h3>
-            <p>Konforlu ve estetik protez uygulamaları.</p>
-            <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
-              <img src="images/icon-instagram.svg" alt="Instagram">
-            </a>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <span uk-icon="icon: instagram" class="uk-margin-small-bottom"></span>
+            <h3>Diş Beyazlatma</h3>
+            <p>Şeffaf plak ve lazer.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="section gallery">
-      <div class="container">
-        <h2><i class="fas fa-images"></i> Galeri</h2>
-        <div class="grid-3">
-          <img src="images/galeri1.jpg" alt="">
-          <img src="images/galeri2.jpg" alt="">
-          <img src="images/galeri3.jpg" alt="">
-          <img src="images/galeri4.jpg" alt="">
-          <img src="images/galeri5.jpg" alt="">
-          <img src="images/galeri6.jpg" alt="">
+    <!-- GALERİ -->
+    <section id="galeri" class="uk-section uk-section-muted">
+      <div class="uk-container">
+        <h2>Galeri</h2>
+        <div class="uk-grid-small uk-child-width-1-3@s" uk-grid uk-lightbox="animation: slide">
+          <a href="images/slider1.jpg"><img src="images/slider1.jpg" alt=""></a>
+          <a href="images/slider2.jpg"><img src="images/slider2.jpg" alt=""></a>
+          <a href="images/slider3.jpg"><img src="images/slider3.jpg" alt=""></a>
         </div>
       </div>
     </section>
 
-    <!-- Appointment -->
-    <section id="appointment" class="section appointment light-bg">
-      <div class="container form-wrap">
-        <h2><i class="fas fa-calendar-alt"></i> Randevu Alın</h2>
-        <form>
-          <input type="text" placeholder="Adınız Soyadınız" required>
-          <input type="tel" placeholder="Telefon" required>
-          <input type="datetime-local" required>
-          <button type="submit">Gönder</button>
+    <!-- RANDEVU AL -->
+    <section id="randevu" class="uk-section uk-section-default">
+      <div class="uk-container uk-container-small">
+        <h2>Randevu Al</h2>
+        <form class="uk-form-stacked">
+          <div class="uk-margin">
+            <label class="uk-form-label" for="name">Adınız Soyadınız</label>
+            <div class="uk-form-controls">
+              <input class="uk-input" id="name" type="text" placeholder="Adınız Soyadınız">
+            </div>
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="phone">Telefon Numaranız</label>
+            <div class="uk-form-controls">
+              <input class="uk-input" id="phone" type="tel" placeholder="+90 5__ ___ ____">
+            </div>
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="date">Randevu Tarihi</label>
+            <div class="uk-form-controls">
+              <input class="uk-input" id="date" type="date">
+            </div>
+          </div>
+          <button class="uk-button uk-button-primary uk-width-1-1">Gönder</button>
         </form>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-      <div class="container grid-2">
-        <div class="contact-info">
-          <h2><i class="fas fa-address-card"></i> İletişim</h2>
-          <p>Adres: Örnek Mah. No:123, Şehir</p>
-          <p>Telefon: +90 545 502 8282</p>
-          <p>Email: info@rodent.com.tr</p>
+    <!-- İLETİŞİM -->
+    <section id="iletisim" class="uk-section uk-section-muted">
+      <div class="uk-container">
+        <h2>İletişim</h2>
+        <p><span uk-icon="icon: location"></span> Adres: Vali Ozan Cad. Teras 2 İş Merkezi No:5 Artuklu/MARDİN</p>
+        <p><span uk-icon="icon: phone"></span> Telefon: <a href="tel:+905451074747">+90 545 502 8282</a></p>
+        <p><span uk-icon="icon: mail"></span> E-mail: <a href="mailto:info@rodentwebsite.com">info@rodentwebsite.com</a></p>
+        <div class="uk-margin-small-top">
+          <a href="#" class="uk-icon-button" uk-icon="icon: facebook"></a>
+          <a href="#" class="uk-icon-button" uk-icon="icon: instagram"></a>
         </div>
-        <div class="map">
-          <iframe src="https://www.google.com/maps/embed?pb=…" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- Organization Chart -->
-    <section id="orgchart" class="section orgchart light-bg">
-      <div class="container">
-        <h2><i class="fas fa-sitemap"></i> Organizasyon Şeması</h2>
-        <img src="images/org-semasi.png" alt="Organizasyon Şeması">
       </div>
     </section>
 
   </main>
 
-  <script src="js/script.js"></script>
+  <!-- FOOTER -->
+  <footer class="uk-section uk-section-small uk-section-default">
+    <div class="uk-container uk-text-center">
+      <img src="images/logo.png" alt="Rodent Logo" width="150"><br><br>
+      <p>© 2025 Rodent Ağız ve Diş Sağlığı. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
