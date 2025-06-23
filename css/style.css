@@ -1,40 +1,79 @@
-/* Header Top Bar */
-.header-top a {
-  color: #fff;
-  text-decoration: none;
+/* Varsayılan reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; color: #333; }
+
+/* Top bar */
+.top-bar { background: #f5f5f5; font-size: 14px; }
+.top-bar a { color: #333; text-decoration: none; }
+.top-bar .social-links img { width: 20px; margin-left: 10px; }
+
+/* Navbar */
+.uk-navbar-container { box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.uk-navbar-nav > li > a { font-weight: 500; }
+.uk-navbar-nav > li > a:hover { color: #0aadc3; }
+
+/* HERO */
+.hero {
+  position: relative;
+  background: url('../images/klinik1.jpg') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero .overlay {
+  position: absolute; top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.4);
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+
+/* SECTION BAŞLIKLARI */
+.section { padding: 60px 0; }
+.light-bg { background: #fafafa; }
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  position: relative;
+}
+.section h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #0aadc3;
+  display: block;
+  margin: 10px auto 0;
 }
 
-/* Mega menu headings */
-#header h4 {
-  margin-bottom: 0.5rem;
-  color: #fff;
-  font-weight: 600;
-  text-transform: uppercase;
-}
+/* VİZYON & MİSYON */
+.vision-grid h3 { margin-bottom: 10px; color: #0aadc3; }
 
-/* Mega dropdown links */
-.uk-navbar-dropdown-grid a {
-  color: #333;
-}
-.uk-navbar-dropdown-grid a:hover {
-  color: #0077cc;
-}
+/* SLIDER UYKUN */
+.uk-slideshow-items img { opacity: 0.9; }
 
-/* Offcanvas links */
-.uk-offcanvas-bar .uk-nav-default a {
-  color: #333;
-  font-size: 1.1rem;
-}
+/* GALLERY */
+.gallery img { width: 100%; display: block; border-radius: 5px; transition: transform .3s; }
+.gallery img:hover { transform: scale(1.05); }
 
-/* Vision & Mission spacing */
-.uk-section h2 {
-  margin-bottom: 1rem;
+/* APPOINTMENT FORM */
+form.uk-input, form.uk-button {
+  border-radius: 5px;
 }
-.uk-section p {
-  line-height: 1.6;
-}
+.uk-button-primary { background: #0aadc3; border-color: #0aadc3; }
+.uk-button-primary:hover { background: #087f94; border-color: #087f94; }
 
-/* Service card icons */
-.uk-card .uk-icon {
-  margin-bottom: 1rem;
+/* ORGANIZATION CHART */
+#orgchart img { max-width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+/* Footer */
+footer { background: #333; color: #aaa; }
+
+/* OFFCANVAS OVERLAY GÖRÜNÜRLÜĞÜ */
+.uk-offcanvas-bar { background: #fff; }
+
+/* Responsive tweeks */
+@media(max-width: 600px) {
+  .hero-content h1 { font-size: 2rem; }
 }
