@@ -1,266 +1,121 @@
-/* ==============================
-   Reset & Temel
-   ============================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
-.light-bg {
-  background: #fafafa;
-}
+/* … önceki genel stilleriniz … */
 
-/* ==============================
-   Menü
-   ============================== */
+/* ----------------------------
+   Header & Menü Ortamı
+   ---------------------------- */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
-  z-index: 100;
-}
-.navbar ul {
+  z-index: 200;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 1rem;
+  height: 60px;
+}
+.navbar .logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #0077cc;
+  text-decoration: none;
+}
+
+/* Hamburger buton */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Desktop menü */
+.desktop-nav {
+  margin-left: auto;
+}
+.desktop-nav ul {
+  display: flex;
   list-style: none;
-  padding: 1rem 0;
 }
-.navbar li {
-  margin: 0.25rem 1rem;   /* daraltıldı */
+.desktop-nav li {
+  margin: 0 0.75rem;
 }
-.navbar a {
+.desktop-nav a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
 }
-.navbar a:hover {
+.desktop-nav a:hover {
   color: #0077cc;
 }
 
-/* ==============================
-   Slider
-   ============================== */
-.slider {
-  /* her zaman yüksek: %80 viewport, max 600px */
-  height: 80vh;
-  max-height: 600px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-  margin-top: 0; /* header fixed olduğu için doğrudan başlıyor */
-}
-.slides {
-  display: flex;
-  width: 100%;       /* JS ile override ediliyor */
+/* Mobile drawer */
+.mobile-nav {
+  position: fixed;
+  top: 0; right: -250px;       /* başta gizli */
+  width: 250px;
   height: 100%;
-  transition: transform 0.8s ease;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  z-index: 205;
+  padding-top: 60px;           /* header yüksekliği kadar boşluk */
 }
-.slides img {
-  flex-shrink: 0;
-  width: 100%;       /* JS ile override ediliyor */
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.intro {
-  position: absolute;
-  bottom: 20%;
-  left: 10%;
-  color: #fff;
-  backdrop-filter: blur(5px);
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-/* ==============================
-   Bölümler Genel
-   ============================== */
-.section {
-  padding: 4rem 1rem;
-  text-align: center;
-}
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #0077cc;
-}
-
-/* ortak container genişliği */
-.columns,
-.cards,
-.gallery-grid,
-form,
-.map,
-#orgchart {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ==============================
-   Vizyon & Misyon
-   ============================== */
-.columns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-.columns > div {
-  flex: 1 1 300px;
-  text-align: left;
-}
-
-/* ==============================
-   Hizmet Kartları
-   ============================== */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-.card {
-  flex: 1 1 250px;
-  padding: 1rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  transition: transform .3s;
-  text-align: left;
-}
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* ==============================
-   Galeri
-   ============================== */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-}
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  max-height: 200px;  /* kontrol altına alındı */
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-/* ==============================
-   Kurumsal Bilgiler
-   ============================== */
-#corporate ul {
+.mobile-nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 600px;
-  text-align: left;
+  padding: 1rem;
 }
-#corporate ul li {
-  margin-bottom: .5rem;
+.mobile-nav li {
+  margin-bottom: 1rem;
 }
-
-/* ==============================
-   Randevu Formu
-   ============================== */
-form {
-  max-width: 400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.mobile-nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
 }
-input,
-button {
-  padding: .75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-button {
-  background: #0077cc;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: opacity .3s;
-}
-button:hover {
-  opacity: .8;
+.mobile-nav a:hover {
+  color: #0077cc;
 }
 
-/* ==============================
-   İletişim Haritası
-   ============================== */
-.map iframe {
-  width: 100%;
-  height: 300px;
-  border: 0;
+/* Overlay */
+.nav-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 200;
 }
 
-/* ==============================
-   Organizasyon Şeması
-   ============================== */
-#orgchart {
-  padding: 4rem 1rem;
+/* Açık drawer sınıfı */
+.navbar.nav-open .mobile-nav {
+  right: 0;
 }
-#orgchart img {
-  display: block;
-  width: 100%;
-  max-width: 600px;   /* mobilde taşmayı engeller */
-  height: auto;
-  margin: 0 auto;
-  border-radius: 4px;
+.navbar.nav-open .nav-overlay {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* ==============================
-   Medya Sorguları (Responsive)
-   ============================== */
-/* Büyük masaüstü: 1200px altı */
-@media (max-width: 1200px) {
-  .columns > div { flex: 1 1 45%; }
-}
-
-/* Tablet yatay: 992px altı */
+/* ----------------------------
+   Sadece mobilde
+   ---------------------------- */
 @media (max-width: 992px) {
-  .columns > div,
-  .card { flex: 1 1 100%; }
-  .section { padding: 3rem 1rem; }
-  .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .desktop-nav { display: none; }
+  .menu-toggle { display: flex; }
 }
 
-/* Tablet/ büyük telefon: 768px altı */
-@media (max-width: 768px) {
-  /* slider yüksekliğini mobilde eskisi gibi bıraktık (80vh) */
-  .section { padding: 2.5rem 1rem; }
-  .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
-}
-
-/* Küçük telefon: 576px altı */
-@media (max-width: 576px) {
-  body { font-size: 14px; }
-  .navbar ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  .navbar li {
-    margin: 0.2rem 0;  /* daha sıkıştırıldı */
-  }
-  .section {
-    padding: 2rem 0.5rem;
-  }
-  .gallery-grid img {
-    max-height: 150px;
-  }
-  #orgchart img {
-    max-width: 90%;
-  }
-}
+/* … geri kalan responsive stilleriniz … */
