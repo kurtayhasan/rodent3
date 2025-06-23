@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <!-- HEADER / NAV -->
+  <!-- HEADER -->
   <header class="navbar">
     <div class="container header-inner">
       <a href="#home" class="logo"><img src="images/logo.svg" alt="Rodent"></a>
@@ -54,26 +54,29 @@
   </header>
 
   <main>
+
     <!-- HERO / SLIDER -->
     <section id="home" class="hero">
       <div class="slides">
+        <!-- Slider kap arka plan img yerine inline style kullanıyoruz -->
         <div class="slide" style="background-image:url('images/slider1.jpg')">
           <div class="slide-content">
-            <h1>Konforlu ve Lüks Tedavi</h1>
+            <h1>Konforlu Tedavi</h1>
+            <p>Lüks kliniğimizde sağlığınız emin ellerde.</p>
             <a href="#services" class="btn">Hizmetlerimiz</a>
           </div>
         </div>
-        <!-- … slider2, slider3, … toplam 6–7 tane … -->
+        <!-- Aynı yapıyı slider2, slider3… için tekrarlayın -->
       </div>
       <div class="slider-dots"></div>
     </section>
 
     <!-- HAKKIMIZDA -->
-    <section id="about" class="section about">
-      <div class="container">
+    <section id="about" class="section about light-bg">
+      <div class="container grid-2">
         <div class="about-text">
           <h2>Rodent Hakkında</h2>
-          <p>Rodent Ağız ve Diş Sağlığı Merkezi, modern tekniklerle konforlu tedaviyi bir araya getirir.</p>
+          <p>Modern teknoloji ile donatılmış kliniğimiz, ağrısız ve güvenilir tedavi sunar.</p>
           <a href="#contact" class="btn-outline">Bize Ulaşın</a>
         </div>
         <div class="about-image">
@@ -87,11 +90,11 @@
       <div class="container grid-2">
         <div>
           <h2>Vizyon</h2>
-          <p>Sağlıkta mükemmelliği hedefleyen lider bir merkez olmak.</p>
+          <p>Sağlıkta mükemmellikte öncü olmak.</p>
         </div>
         <div>
           <h2>Misyon</h2>
-          <p>Hasta konforunu ön planda tutarak güvenilir ve kaliteli hizmet sunmak.</p>
+          <p>Hastalarımıza konforlu, güvenilir hizmet sunmak.</p>
         </div>
       </div>
     </section>
@@ -102,19 +105,19 @@
         <h2>Hizmetlerimiz</h2>
         <div class="grid-4">
           <div class="card">
-            <img src="images/icon-estetik.svg" alt="">
+            <img src="images/icon-estetik.svg" alt="Estetik Diş">
             <h3>Estetik Diş</h3>
           </div>
           <div class="card">
-            <img src="images/icon-implant.svg" alt="">
+            <img src="images/icon-implant.svg" alt="İmplant">
             <h3>İmplant</h3>
           </div>
           <div class="card">
-            <img src="images/icon-ortodonti.svg" alt="">
+            <img src="images/icon-ortodonti.svg" alt="Ortodonti">
             <h3>Ortodonti</h3>
           </div>
           <div class="card">
-            <img src="images/icon-protez.svg" alt="">
+            <img src="images/icon-protez.svg" alt="Protez">
             <h3>Protez</h3>
           </div>
         </div>
@@ -151,21 +154,24 @@
       <div class="container grid-2">
         <div class="contact-info">
           <h2>İletişim</h2>
-          <p>Adres: …</p>
+          <p>Adres: Örnek Mah. No:123, Şehir</p>
           <p>Telefon: +90 545 502 8282</p>
           <p>Email: info@rodent.com.tr</p>
         </div>
-        <div class="map"><iframe src="https://www.google.com/maps/embed?pb=…" allowfullscreen></iframe></div>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=…" allowfullscreen></iframe>
+        </div>
       </div>
     </section>
 
-    <!-- ORGANİZASYON ŞEMASI -->
+    <!-- ORGANİZASYON -->
     <section id="orgchart" class="section orgchart light-bg">
       <div class="container">
         <h2>Organizasyon Şeması</h2>
         <img src="images/org-semasi.png" alt="Organizasyon Şeması">
       </div>
     </section>
+
   </main>
 
   <script src="js/script.js"></script>
