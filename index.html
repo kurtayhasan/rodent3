@@ -2,24 +2,47 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>XYZ Diş Kliniği</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rodent Ağız & Diş Sağlığı</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER & NAVIGATION -->
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <span><a href="mailto:info@rodent.com.tr">info@rodent.com.tr</a></span>
+      <span>+90 545 502 8282</span>
+      <div class="socials">
+        <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER / NAV -->
   <header class="navbar">
-    <a href="#home" class="logo">XYZ Diş Kliniği</a>
-    <button class="menu-toggle" aria-label="Menüyü aç">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="desktop-nav">
+    <div class="container header-inner">
+      <a href="#home" class="logo"><img src="images/logo.svg" alt="Rodent"></a>
+      <button class="menu-toggle"><span></span><span></span><span></span></button>
+      <nav class="nav-desktop">
+        <ul>
+          <li><a href="#home">Ana Sayfa</a></li>
+          <li><a href="#about">Hakkımızda</a></li>
+          <li><a href="#vision">Vizyon & Misyon</a></li>
+          <li><a href="#services">Hizmetler</a></li>
+          <li><a href="#gallery">Galeri</a></li>
+          <li><a href="#appointment">Randevu</a></li>
+          <li><a href="#contact">İletişim</a></li>
+          <li><a href="#orgchart">Organizasyon</a></li>
+        </ul>
+      </nav>
+    </div>
+    <nav class="nav-mobile">
       <ul>
         <li><a href="#home">Ana Sayfa</a></li>
         <li><a href="#about">Hakkımızda</a></li>
         <li><a href="#vision">Vizyon & Misyon</a></li>
-        <li><a href="#corporate">Kurumsal</a></li>
         <li><a href="#services">Hizmetler</a></li>
         <li><a href="#gallery">Galeri</a></li>
         <li><a href="#appointment">Randevu</a></li>
@@ -27,114 +50,124 @@
         <li><a href="#orgchart">Organizasyon</a></li>
       </ul>
     </nav>
-    <nav class="mobile-nav">
-      <ul>
-        <li><a href="#home">Ana Sayfa</a></li>
-        <li><a href="#about">Hakkımızda</a></li>
-        <li><a href="#vision">Vizyon & Misyon</a></li>
-        <li><a href="#corporate">Kurumsal</a></li>
-        <li><a href="#services">Hizmetler</a></li>
-        <li><a href="#gallery">Galeri</a></li>
-        <li><a href="#appointment">Randevu</a></li>
-        <li><a href="#contact">İletişim</a></li>
-        <li><a href="#orgchart">Organizasyon</a></li>
-      </ul>
-    </nav>
-    <div class="nav-overlay"></div>
+    <div class="overlay"></div>
   </header>
 
   <main>
     <!-- HERO / SLIDER -->
-    <section id="home" class="slider">
+    <section id="home" class="hero">
       <div class="slides">
-        <img src="images/slider1.jpg" alt="">
-        <img src="images/slider2.jpg" alt="">
-        <img src="images/slider3.jpg" alt="">
-        <img src="images/slider4.jpg" alt="">
-        <img src="images/slider5.jpg" alt="">
-        <img src="images/slider6.jpg" alt="">
-        <img src="images/slider7.jpg" alt="">
+        <div class="slide" style="background-image:url('images/slider1.jpg')">
+          <div class="slide-content">
+            <h1>Konforlu ve Lüks Tedavi</h1>
+            <a href="#services" class="btn">Hizmetlerimiz</a>
+          </div>
+        </div>
+        <!-- … slider2, slider3, … toplam 6–7 tane … -->
       </div>
-      <div class="intro">
-        <h1>Hoş Geldiniz</h1>
-        <p>Sağlığınız, önceliğimiz.</p>
-      </div>
+      <div class="slider-dots"></div>
     </section>
 
     <!-- HAKKIMIZDA -->
-    <section id="about" class="section">
-      <h2>Hakkımızda</h2>
-      <p>Kuruluşumuzdan bu yana en yüksek kaliteyi sunuyoruz.</p>
-    </section>
-
-    <!-- VİZYON & MİSYON -->
-    <section id="vision" class="section light-bg">
-      <h2>Vizyon & Misyon</h2>
-      <div class="columns">
-        <div><h3>Vizyon</h3><p>Sağlıkta mükemmellik.</p></div>
-        <div><h3>Misyon</h3><p>Hastalarımıza güven ve konfor sunmak.</p></div>
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="about-text">
+          <h2>Rodent Hakkında</h2>
+          <p>Rodent Ağız ve Diş Sağlığı Merkezi, modern tekniklerle konforlu tedaviyi bir araya getirir.</p>
+          <a href="#contact" class="btn-outline">Bize Ulaşın</a>
+        </div>
+        <div class="about-image">
+          <img src="images/about.jpg" alt="Kliniğimiz">
+        </div>
       </div>
     </section>
 
-    <!-- KURUMSAL BİLGİLER -->
-    <section id="corporate" class="section">
-      <h2>Kurumsal Bilgiler</h2>
-      <ul>
-        <li>TC Kimlik No: …</li>
-        <li>Vergi No: …</li>
-        <li>Adres: …</li>
-      </ul>
+    <!-- VİZYON & MİSYON -->
+    <section id="vision" class="section vision">
+      <div class="container grid-2">
+        <div>
+          <h2>Vizyon</h2>
+          <p>Sağlıkta mükemmelliği hedefleyen lider bir merkez olmak.</p>
+        </div>
+        <div>
+          <h2>Misyon</h2>
+          <p>Hasta konforunu ön planda tutarak güvenilir ve kaliteli hizmet sunmak.</p>
+        </div>
+      </div>
     </section>
 
     <!-- HİZMETLER -->
-    <section id="services" class="section light-bg">
-      <h2>Hizmetlerimiz</h2>
-      <div class="cards">
-        <div class="card"><h3>Estetik Diş</h3><p>...</p></div>
-        <div class="card"><h3>İmplant</h3><p>...</p></div>
-        <div class="card"><h3>Ortodonti</h3><p>...</p></div>
-        <div class="card"><h3>Protez</h3><p>...</p></div>
+    <section id="services" class="section services light-bg">
+      <div class="container">
+        <h2>Hizmetlerimiz</h2>
+        <div class="grid-4">
+          <div class="card">
+            <img src="images/icon-estetik.svg" alt="">
+            <h3>Estetik Diş</h3>
+          </div>
+          <div class="card">
+            <img src="images/icon-implant.svg" alt="">
+            <h3>İmplant</h3>
+          </div>
+          <div class="card">
+            <img src="images/icon-ortodonti.svg" alt="">
+            <h3>Ortodonti</h3>
+          </div>
+          <div class="card">
+            <img src="images/icon-protez.svg" alt="">
+            <h3>Protez</h3>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- GALERİ -->
-    <section id="gallery" class="section">
-      <h2>Galeri</h2>
-      <div class="gallery-grid">
+    <section id="gallery" class="section gallery">
+      <div class="container grid-3">
         <img src="images/galeri1.jpg" alt="">
         <img src="images/galeri2.jpg" alt="">
         <img src="images/galeri3.jpg" alt="">
+        <img src="images/galeri4.jpg" alt="">
+        <img src="images/galeri5.jpg" alt="">
+        <img src="images/galeri6.jpg" alt="">
       </div>
     </section>
 
     <!-- RANDEVU -->
-    <section id="appointment" class="section light-bg">
-      <h2>Randevu</h2>
-      <form>
-        <input type="text" placeholder="Adınız Soyadınız" required>
-        <input type="tel" placeholder="Telefon" required>
-        <input type="datetime-local" required>
-        <button type="submit">Gönder</button>
-      </form>
+    <section id="appointment" class="section appointment light-bg">
+      <div class="container form-wrap">
+        <h2>Randevu Alın</h2>
+        <form>
+          <input type="text" placeholder="Adınız Soyadınız" required>
+          <input type="tel" placeholder="Telefon" required>
+          <input type="datetime-local" required>
+          <button type="submit">Gönder</button>
+        </form>
+      </div>
     </section>
 
     <!-- İLETİŞİM -->
-    <section id="contact" class="section">
-      <h2>İletişim</h2>
-      <p>Adres: …</p>
-      <p>Telefon: …</p>
-      <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=…" allowfullscreen></iframe>
+    <section id="contact" class="section contact">
+      <div class="container grid-2">
+        <div class="contact-info">
+          <h2>İletişim</h2>
+          <p>Adres: …</p>
+          <p>Telefon: +90 545 502 8282</p>
+          <p>Email: info@rodent.com.tr</p>
+        </div>
+        <div class="map"><iframe src="https://www.google.com/maps/embed?pb=…" allowfullscreen></iframe></div>
       </div>
     </section>
 
     <!-- ORGANİZASYON ŞEMASI -->
-    <section id="orgchart" class="section light-bg">
-      <h2>Organizasyon Şeması</h2>
-      <img src="images/org-semasi.png" alt="Organizasyon Şeması">
+    <section id="orgchart" class="section orgchart light-bg">
+      <div class="container">
+        <h2>Organizasyon Şeması</h2>
+        <img src="images/org-semasi.png" alt="Organizasyon Şeması">
+      </div>
     </section>
   </main>
 
-  <script src="/js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
