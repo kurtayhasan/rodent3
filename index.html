@@ -1,317 +1,195 @@
-:root {
-  --primary: #0077cc;
-  --light: #f9faff;
-  --dark: #333;
-  --radius: 1.2rem;
-  --shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rodent Ağız & Diş Sağlığı</title>
+  <!-- FontAwesome ikonlar için -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <span><i class="fas fa-envelope"></i> <a href="mailto:info@rodent.com.tr">info@rodent.com.tr</a></span>
+      <span><i class="fas fa-phone-alt"></i> +90 545 502 8282</span>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  color: var(--dark);
-  line-height: 1.6;
-}
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="container header-inner">
+      <a href="#home" class="logo">
+        <img src="images/logo.png" alt="Rodent Klinik Logo">
+      </a>
+      <button class="menu-toggle" aria-label="Menüyü aç">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-desktop">
+        <ul>
+          <li><a href="#home">Ana Sayfa</a></li>
+          <li><a href="#about"><i class="fas fa-info-circle"></i> Hakkımızda</a></li>
+          <li><a href="#vision"><i class="fas fa-lightbulb"></i> Vizyon & Misyon</a></li>
+          <li><a href="#services"><i class="fas fa-tooth"></i> Hizmetler</a></li>
+          <li><a href="#gallery"><i class="fas fa-images"></i> Galeri</a></li>
+          <li><a href="#appointment"><i class="fas fa-calendar-check"></i> Randevu</a></li>
+          <li><a href="#contact"><i class="fas fa-map-marker-alt"></i> İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+    <nav class="nav-mobile">
+      <ul>
+        <li><a href="#home">Ana Sayfa</a></li>
+        <li><a href="#about">Hakkımızda</a></li>
+        <li><a href="#vision">Vizyon & Misyon</a></li>
+        <li><a href="#services">Hizmetler</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#appointment">Randevu</a></li>
+        <li><a href="#contact">İletişim</a></li>
+      </ul>
+    </nav>
+    <div class="overlay"></div>
+  </header>
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  <main>
+    <!-- HERO / SLIDER -->
+    <section id="home" class="hero">
+      <div class="slides">
+        <div class="slide" style="background-image:url('images/klinik1.jpg')">
+          <div class="slide-content">
+            <h1>Konforlu Tedavi</h1>
+            <p>Lüks kliniğimizde sağlığınız emin ellerde.</p>
+            <a href="#services" class="btn">Hizmetlerimiz</a>
+          </div>
+        </div>
+        <div class="slide" style="background-image:url('images/slider2.jpg')">
+          <div class="slide-content">
+            <h1>Uzman Ekip</h1>
+            <p>Deneyimli kadromuzla güvende hissedin.</p>
+            <a href="#about" class="btn">Hakkımızda</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* Top Bar */
-.top-bar {
-  background: var(--light);
-  font-size: .9rem;
-}
-.top-bar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: .5rem 0;
-}
-.top-bar a {
-  color: var(--dark);
-  text-decoration: none;
-}
-.socials a {
-  margin-left: .75rem;
-  color: var(--dark);
-  font-size: 1.1rem;
-}
-.socials a:hover {
-  color: var(--primary);
-}
+    <!-- About -->
+    <section id="about" class="section about light-bg">
+      <div class="container grid-2">
+        <div class="about-text">
+          <h2><i class="fas fa-clinic-medical"></i> Rodent Hakkında</h2>
+          <p>Modern teknoloji ile donatılmış kliniğimiz, ağrısız ve güvenilir tedavi sunar.</p>
+          <a href="#contact" class="btn-outline">Bize Ulaşın</a>
+        </div>
+        <div class="about-image">
+          <img src="images/about.jpg" alt="Kliniğimiz">
+        </div>
+      </div>
+    </section>
 
-/* Header */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: var(--primary);
-  box-shadow: var(--shadow);
-  z-index: 200;
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  height: 60px;
-}
-.logo img {
-  height: 40px;
-}
-.menu-toggle {
-  display: none;
-  margin-left: auto;
-  width: 24px;
-  height: 18px;
-  background: none;
-  border: none;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-.menu-toggle span {
-  display: block;
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-}
-.nav-desktop ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin-left: auto;
-}
-.nav-desktop a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  padding: .5rem;
-}
-.nav-desktop a:hover {
-  background: rgba(255,255,255,0.2);
-  border-radius: var(--radius);
-}
+    <!-- Vision & Mission -->
+    <section id="vision" class="section vision">
+      <div class="container grid-2">
+        <div class="vm-block">
+          <h2>Vizyonumuz</h2>
+          <p>Toplumun her kesimine güvenli ve kesintisiz diş sağlığı hizmeti sunmak.</p>
+        </div>
+        <div class="vm-block">
+          <h2>Misyonumuz</h2>
+          <p>Hasta memnuniyetini ve kalite standartlarını en üst seviyede tutmak.</p>
+        </div>
+      </div>
+    </section>
 
-/* Mobile Nav */
-.nav-mobile {
-  position: fixed;
-  top: 0; right: -280px;
-  width: 280px; height: 100%;
-  background: #fff;
-  box-shadow: -2px 0 12px rgba(0,0,0,0.1);
-  transition: right .3s;
-  padding-top: 60px;
-  z-index: 210;
-}
-.nav-mobile ul {
-  list-style: none;
-  padding: 1rem;
-}
-.nav-mobile li + li {
-  margin-top: 1rem;
-}
-.nav-mobile a {
-  color: var(--dark);
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-.overlay {
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,0.4);
-  opacity:0; visibility:hidden;
-  transition:opacity .3s;
-  z-index:205;
-}
-.nav-open .nav-mobile {
-  right: 0;
-}
-.nav-open .overlay {
-  opacity: 1;
-  visibility: visible;
-}
+    <!-- Services -->
+    <section id="services" class="section services light-bg">
+      <div class="container">
+        <h2><i class="fas fa-hands-helping"></i> Hizmetlerimiz</h2>
+        <div class="grid-4">
+          <!-- Estetik -->
+          <div class="card">
+            <img src="images/icon-estetik.svg" alt="Estetik Diş">
+            <h3>Estetik Diş</h3>
+            <p>Doğal gülüşünüzü yeniden kazandırıyoruz.</p>
+          </div>
+          <!-- İmplant -->
+          <div class="card">
+            <img src="images/icon-implant.svg" alt="İmplant">
+            <h3>İmplant</h3>
+            <p>Kalıcı diş eksikliği çözümleri sunuyoruz.</p>
+          </div>
+          <!-- Ortodonti -->
+          <div class="card">
+            <img src="images/icon-ortodonti.svg" alt="Ortodonti">
+            <h3>Ortodonti</h3>
+            <p>Düzgün ve sağlıklı diş dizilimine odaklanıyoruz.</p>
+          </div>
+          <!-- Protez -->
+          <div class="card">
+            <img src="images/icon-protez.svg" alt="Protez">
+            <h3>Protez</h3>
+            <p>Konforlu ve estetik protez uygulamaları.</p>
+          </div>
+          <!-- Kanal Tedavisi -->
+          <div class="card">
+            <img src="images/icon-kanalter.svg" alt="Kanal Tedavisi">
+            <h3>Kanal Tedavisi</h3>
+            <p>Ağrısız kök kanal tedavisi çözümleri.</p>
+          </div>
+          <!-- Diş Beyazlatma -->
+          <div class="card">
+            <img src="images/icon-beyazlatma.svg" alt="Diş Beyazlatma">
+            <h3>Diş Beyazlatma</h3>
+            <p>Şeffaf plak ve lazer ile beyazlatma.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* Hero/Slider */
-.hero {
-  position: relative;
-  overflow: hidden;
-  height: 80vh;
-  max-height: 650px;
-}
-.slides {
-  display: flex;
-  height: 100%;
-  transition: transform 1s ease;
-}
-.slide {
-  flex: 1 0 100%;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-.slide-content {
-  position: absolute;
-  bottom: 20%;
-  left: 10%;
-  background: rgba(255,255,255,0.9);
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-.slide-content h1 {
-  font-size: 2rem;
-  margin-bottom: .5rem;
-  color: var(--primary);
-}
-.btn {
-  display: inline-block;
-  padding: .75rem 1.5rem;
-  background: var(--primary);
-  color: #fff;
-  border-radius: var(--radius);
-  text-decoration: none;
-}
+    <!-- Gallery -->
+    <section id="gallery" class="section gallery">
+      <h2 class="text-center"><i class="fas fa-images"></i> Galeri</h2>
+      <div class="container grid-3">
+        <img src="images/galeri1.jpg" alt="">
+        <img src="images/galeri2.jpg" alt="">
+        <img src="images/galeri3.jpg" alt="">
+      </div>
+    </section>
 
-/* Sections */
-.section {
-  padding: 4rem 0;
-}
-.light-bg {
-  background: var(--light);
-}
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-  gap: 1rem;
-}
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-  gap: 2rem;
-}
-.text-center {
-  text-align: center;
-  margin-bottom: 2rem;
-}
+    <!-- Appointment -->
+    <section id="appointment" class="section appointment light-bg">
+      <div class="container form-wrap">
+        <h2><i class="fas fa-calendar-alt"></i> Randevu Alın</h2>
+        <form>
+          <input type="text" placeholder="Adınız Soyadınız" required>
+          <input type="tel" placeholder="+90 5__ ___ ____" required>
+          <input type="date" required>
+          <button type="submit">Gönder</button>
+        </form>
+      </div>
+    </section>
 
-/* About */
-.about-text h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--primary);
-}
-.btn-outline {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: .5rem 1rem;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-  border-radius: var(--radius);
-  text-decoration: none;
-}
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="container grid-2">
+        <div class="contact-info">
+          <h2><i class="fas fa-map-marker-alt"></i> İletişim</h2>
+          <p><i class="fas fa-home"></i> Örnek Mah. No:123, Şehir</p>
+          <p><i class="fas fa-phone"></i> +90 545 502 8282</p>
+          <p><i class="fas fa-envelope"></i> info@rodent.com.tr</p>
+        </div>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=…" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
 
-/* Vision */
-.vision .vm-block h2 {
-  font-size: 1.8rem;
-  color: var(--primary);
-  margin-bottom: .75rem;
-}
-.vision .vm-block p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-}
-
-/* Services */
-.card {
-  background: #fff;
-  padding: 2rem 1rem;
-  text-align: center;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform .3s;
-}
-.card:hover {
-  transform: translateY(-5px);
-}
-.card img {
-  width: 60px;
-  margin-bottom: 1rem;
-}
-
-/* Gallery */
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-/* Appointment */
-.form-wrap {
-  text-align: center;
-}
-form {
-  display: inline-grid;
-  grid-gap: 1rem;
-  max-width: 400px;
-  width: 100%;
-}
-form input, form button {
-  width: 100%;
-  padding: .75rem;
-  border-radius: var(--radius);
-  border: 1px solid #ccc;
-}
-form button {
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-/* Contact */
-.contact-info h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--primary);
-}
-.contact-info p {
-  margin-bottom: .5rem;
-}
-.contact-info i {
-  margin-right: .5rem;
-}
-
-/* Responsive */
-@media(max-width: 992px) {
-  .nav-desktop {
-    display: none;
-  }
-  .menu-toggle {
-    display: flex;
-  }
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-}
-@media(max-width: 768px) {
-  .slide-content {
-    left: 5%; right: 5%; bottom: 15%;
-  }
-  .slide-content h1 {
-    font-size: 1.5rem;
-  }
-}
+  <script src="js/script.js"></script>
+</body>
+</html>
