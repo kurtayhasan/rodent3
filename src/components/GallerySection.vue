@@ -1,1 +1,0 @@
-<template><section class='py-12 bg-gray-200 text-center'>Galeri</section></template>

@@ -1,1 +1,0 @@
-<template><section class='py-12 bg-gray-100 text-center'>Slider - Klinik Aletleri</section></template>

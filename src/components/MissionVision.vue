@@ -1,1 +1,0 @@
-<template><section class='py-12 bg-blue-50 text-center'>Misyon & Vizyon</section></template>

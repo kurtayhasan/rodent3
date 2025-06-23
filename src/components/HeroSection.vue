@@ -1,1 +1,0 @@
-<template><section class='h-screen bg-cover bg-center text-white flex items-center justify-center' style="background-image: url('/assets/klinik1.jpg')"><h1 class='text-4xl font-bold bg-black bg-opacity-50 p-4'>Rodent Ağız ve Diş Sağlığı Merkezi</h1></section></template>
