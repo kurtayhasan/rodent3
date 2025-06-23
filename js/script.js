@@ -1,16 +1,18 @@
-// Sayfa içi linkler için smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    // Offcanvas açıksa kapat
-    const offcanvas = UIkit.offcanvas('#offcanvas-nav');
-    if (offcanvas && offcanvas.isActive()) {
-      offcanvas.hide();
-    }
-    // Smooth scroll
+// Smooth scroll tüm ankrajlara
+document.querySelectorAll('a[href^="#"]').forEach(el => {
+  el.addEventListener('click', e => {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    const target = document.querySelector(el.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+});
+
+// Randevu formu gönderim simülasyonu
+document.querySelector('#randevu form').addEventListener('submit', e => {
+  e.preventDefault();
+  UIkit.notification({ 
+    message: 'Randevu talebiniz alındı, en kısa sürede geri dönüş yapılacaktır.', 
+    status: 'success' 
+  });
+  e.target.reset();
 });
