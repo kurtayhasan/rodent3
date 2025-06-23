@@ -1,4 +1,6 @@
-/* Reset & Temel */
+/* ==============================
+   Reset & Temel
+   ============================== */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +15,9 @@ body {
   background: #fafafa;
 }
 
-/* Menü */
+/* ==============================
+   Menü
+   ============================== */
 .navbar {
   position: fixed;
   width: 100%;
@@ -41,9 +45,10 @@ body {
   color: #0077cc;
 }
 
-/* Slider */
+/* ==============================
+   Slider
+   ============================== */
 .slider {
-  /* Yüksekliği %80 yap ve max 600px sınırla */
   height: 80vh;
   max-height: 600px;
   background-size: cover;
@@ -53,13 +58,13 @@ body {
 }
 .slides {
   display: flex;
-  height: 100%;          /* slider container’ına uyumlu */
+  height: 100%;
   transition: transform 1s ease;
 }
 .slides img {
-  width: 100%;           /* tam genişlik */
-  height: 100%;          /* container yüksekliğine uyumlu */
-  object-fit: cover;     /* taşmayı kırparak kapla */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   flex-shrink: 0;
 }
 .intro {
@@ -72,7 +77,9 @@ body {
   border-radius: 8px;
 }
 
-/* Bölümler */
+/* ==============================
+   Bölümler Genel
+   ============================== */
 .section {
   padding: 4rem 1rem;
   text-align: center;
@@ -83,7 +90,9 @@ body {
   color: #0077cc;
 }
 
-/* Vizyon & Misyon sütunları */
+/* ==============================
+   Vizyon & Misyon Sütunları
+   ============================== */
 .columns {
   display: flex;
   flex-wrap: wrap;
@@ -94,7 +103,9 @@ body {
   flex: 1 1 300px;
 }
 
-/* Hizmet kartları */
+/* ==============================
+   Hizmet Kartları
+   ============================== */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -112,14 +123,18 @@ body {
   transform: translateY(-5px);
 }
 
-/* Galeri */
+/* ==============================
+   Galeri
+   ============================== */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
-/* Form & Buton */
+/* ==============================
+   Form & Buton
+   ============================== */
 form {
   max-width: 400px;
   margin: 0 auto;
@@ -143,14 +158,44 @@ button:hover {
   opacity: 0.8;
 }
 
-/* Harita */
+/* ==============================
+   Harita
+   ============================== */
 .map iframe {
   width: 100%;
   height: 300px;
   border: 0;
 }
 
-/* Responsive */
+/* ==============================
+   Medya Sorguları
+   ============================== */
+
+/* Büyük masaüstü: 1200px üstü */
+@media (max-width: 1200px) {
+  .columns > div {
+    flex: 1 1 45%;
+  }
+  .cards {
+    gap: 1rem;
+  }
+}
+
+/* Orta masaüstü / tablet yatay: 992px üstü */
+@media (max-width: 992px) {
+  .columns > div,
+  .card {
+    flex: 1 1 100%;
+  }
+  .section {
+    padding: 3rem 1rem;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Küçük tablet / büyük telefon: 768px üstü */
 @media (max-width: 768px) {
   .navbar ul {
     flex-wrap: wrap;
@@ -159,8 +204,38 @@ button:hover {
     font-size: 0.9rem;
   }
   .slider {
-    /* Mobilde daha kısa slider */
     height: 50vh;
     max-height: 400px;
+  }
+  .section {
+    padding: 2.5rem 1rem;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* Mobil: 576px üstü */
+@media (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar li {
+    margin: 0.5rem 0;
+  }
+  .section {
+    padding: 2rem 0.5rem;
+  }
+  .intro {
+    bottom: 15%;
+    left: 5%;
+    padding: 0.75rem;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }
