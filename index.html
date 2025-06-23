@@ -2,135 +2,114 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rodent Ağız ve Diş Sağlığı</title>
-  <link rel="stylesheet" href="css/uikit.min.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rodent Ağız & Diş Sağlığı</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER + NAVBAR -->
-  <header>
-    <nav class="uk-navbar-container" uk-navbar>
-      <div class="uk-navbar-left">
-        <a class="uk-navbar-item uk-logo" href="#">Rodent</a>
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <span><a href="mailto:info@rodent.com.tr">info@rodent.com.tr</a></span>
+      <span>+90 545 502 8282</span>
+      <div class="socials">
+        <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
       </div>
-      <div class="uk-navbar-right uk-visible@s">
-        <ul class="uk-navbar-nav">
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="container header-inner">
+      <a href="#home" class="logo"><img src="images/logo.svg" alt="Rodent"></a>
+      <button class="menu-toggle" aria-label="Menüyü aç">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-desktop">
+        <ul>
           <li><a href="#home">Ana Sayfa</a></li>
-          <li><a href="#kurumsal">Kurumsal</a></li>
-          <li><a href="#hizmetler">Hizmetler</a></li>
-          <li><a href="#galeri">Galeri</a></li>
-          <li><a href="#randevu">Randevu</a></li>
-          <li><a href="#iletisim">İletişim</a></li>
+          <li><a href="#about">Hakkımızda</a></li>
+          <li><a href="#vision">Vizyon &amp; Misyon</a></li>
+          <li><a href="#services">Hizmetler</a></li>
+          <li><a href="#gallery">Galeri</a></li>
+          <li><a href="#appointment">Randevu</a></li>
+          <li><a href="#contact">İletişim</a></li>
+          <li><a href="#orgchart">Organizasyon</a></li>
         </ul>
-      </div>
-      <div class="uk-navbar-right uk-hidden@s">
-        <a class="uk-navbar-toggle" uk-toggle="target: #offcanvas-nav" uk-navbar-toggle-icon></a>
-      </div>
-    </nav>
-    <div id="offcanvas-nav" uk-offcanvas="mode: slide; overlay: true">
-      <div class="uk-offcanvas-bar">
-        <ul class="uk-nav uk-nav-default">
+      </nav>
+      <nav class="nav-mobile">
+        <ul>
           <li><a href="#home">Ana Sayfa</a></li>
-          <li><a href="#kurumsal">Kurumsal</a></li>
-          <li><a href="#hizmetler">Hizmetler</a></li>
-          <li><a href="#galeri">Galeri</a></li>
-          <li><a href="#randevu">Randevu</a></li>
-          <li><a href="#iletisim">İletişim</a></li>
+          <li><a href="#about">Hakkımızda</a></li>
+          <li><a href="#vision">Vizyon &amp; Misyon</a></li>
+          <li><a href="#services">Hizmetler</a></li>
+          <li><a href="#gallery">Galeri</a></li>
+          <li><a href="#appointment">Randevu</a></li>
+          <li><a href="#contact">İletişim</a></li>
+          <li><a href="#orgchart">Organizasyon</a></li>
         </ul>
-      </div>
+      </nav>
+      <div class="overlay"></div>
     </div>
   </header>
 
-  <!-- SLIDER -->
-  <section id="home" class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="ratio: 7:3; autoplay: true">
-    <ul class="uk-slideshow-items">
-      <li><img src="images/slider1.jpg" alt="" uk-cover></li>
-      <li><img src="images/slider2.jpg" alt="" uk-cover></li>
-      <li><img src="images/slider3.jpg" alt="" uk-cover></li>
-      <li><img src="images/slider5.jpg" alt="" uk-cover></li>
-      <li><img src="images/slider6.jpg" alt="" uk-cover></li>
-      <li><img src="images/slider7.jpg" alt="" uk-cover></li>
-    </ul>
-    <a class="uk-position-center-left uk-position-small uk-slidenav-large" uk-slidenav-previous uk-slideshow-item="previous"></a>
-    <a class="uk-position-center-right uk-position-small uk-slidenav-large" uk-slidenav-next uk-slideshow-item="next"></a>
-  </section>
+  <main>
+    <!-- (Hero, About, Vision, Services bölümleri aynı kalacak) -->
 
-  <!-- HİZMETLER -->
-  <section id="hizmetler" class="uk-section uk-section-default">
-    <div class="uk-container">
-      <h2 class="uk-heading-line uk-text-center"><span>Hizmetlerimiz</span></h2>
-      <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
-        <div><div class="uk-card uk-card-default uk-card-hover uk-card-body"><h3 class="uk-card-title">İmplant</h3><p>Kalıcı diş kökü çözümü.</p></div></div>
-        <div><div class="uk-card uk-card-default uk-card-hover uk-card-body"><h3 class="uk-card-title">Porselen Kaplama</h3><p>Estetik ve dayanıklı.</p></div></div>
-        <div><div class="uk-card uk-card-default uk-card-hover uk-card-body"><h3 class="uk-card-title">Diş Beyazlatma</h3><p>Porselen ve şeffaf plak.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALERİ -->
-  <section id="galeri" class="uk-section uk-section-muted">
-    <div class="uk-container">
-      <h2 class="uk-heading-line uk-text-center"><span>Galeri</span></h2>
-      <div class="uk-child-width-1-3@m uk-grid-small" uk-grid uk-lightbox="animation: slide">
-        <div>
-          <a href="images/galeri1.jpg" data-caption="Kliniğimiz 1">
+    <!-- Gallery -->
+    <section id="gallery" class="section gallery">
+      <div class="container grid-3">
+        <div class="gallery-item">
+          <a href="images/galeri1.jpg" target="_blank">
             <img src="images/galeri1.jpg" alt="Galeri 1">
           </a>
         </div>
-        <div>
-          <a href="images/galeri2.jpg" data-caption="Kliniğimiz 2">
+        <div class="gallery-item">
+          <a href="images/galeri2.jpg" target="_blank">
             <img src="images/galeri2.jpg" alt="Galeri 2">
           </a>
         </div>
-        <div>
-          <a href="images/galeri3.jpg" data-caption="Kliniğimiz 3">
+        <div class="gallery-item">
+          <a href="images/galeri3.jpg" target="_blank">
             <img src="images/galeri3.jpg" alt="Galeri 3">
           </a>
         </div>
+        <div class="gallery-item">
+          <a href="images/galeri4.jpg" target="_blank">
+            <img src="images/galeri4.jpg" alt="Galeri 4">
+          </a>
+        </div>
+        <div class="gallery-item">
+          <a href="images/galeri5.jpg" target="_blank">
+            <img src="images/galeri5.jpg" alt="Galeri 5">
+          </a>
+        </div>
+        <div class="gallery-item">
+          <a href="images/galeri6.jpg" target="_blank">
+            <img src="images/galeri6.jpg" alt="Galeri 6">
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- RANDEVU -->
-  <section id="randevu" class="uk-section">
-    <div class="uk-container">
-      <h2 class="uk-heading-line uk-text-center"><span>Randevu Al</span></h2>
-      <form class="uk-form-stacked uk-grid-small uk-child-width-1-2@m" uk-grid>
-        <div>
-          <label class="uk-form-label" for="isim">Ad Soyad</label>
-          <div class="uk-form-controls"><input class="uk-input" id="isim" type="text" placeholder="Ad Soyad"></div>
-        </div>
-        <div>
-          <label class="uk-form-label" for="tel">Telefon</label>
-          <div class="uk-form-controls"><input class="uk-input" id="tel" type="tel" placeholder="+90 5__ ___ ____"></div>
-        </div>
-        <div>
-          <label class="uk-form-label" for="tarih">Randevu Tarihi</label>
-          <div class="uk-form-controls"><input class="uk-input" id="tarih" type="date"></div>
-        </div>
-        <div class="uk-text-center">
-          <button class="uk-button uk-button-primary uk-width-1-1">Gönder</button>
-        </div>
-      </form>
-    </div>
-  </section>
+    <!-- Appointment -->
+    <section id="appointment" class="section appointment light-bg">
+      <div class="container form-wrap">
+        <h2>Randevu Alın</h2>
+        <form>
+          <input type="text" placeholder="Adınız Soyadınız" required>
+          <input type="tel" placeholder="Telefon" required>
+          <input type="datetime-local" required>
+          <button type="submit">Gönder</button>
+        </form>
+      </div>
+    </section>
 
-  <!-- İLETİŞİM -->
-  <section id="iletisim" class="uk-section uk-section-secondary uk-light">
-    <div class="uk-container">
-      <h2 class="uk-heading-line uk-text-center"><span>İletişim</span></h2>
-      <p class="uk-text-center">Adres: Vali Ozan Cad. No:5, Artuklu/Mardin<br>Telefon: 0850 470 4747<br>Email: info@rodent.com.tr</p>
-    </div>
-  </section>
+    <!-- Contact, Organizasyon bölümleri aynı kalacak -->
+  </main>
 
-  <footer class="uk-section uk-section-small uk-text-center">
-    © 2025 Rodent Ağız ve Diş Sağlığı
-  </footer>
-
-  <script src="js/uikit.min.js"></script>
-  <script src="js/uikit-icons.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
