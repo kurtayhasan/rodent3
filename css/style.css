@@ -1,145 +1,121 @@
-/* ================ Temel Reset ================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --primary-color: #007bff;
 }
+
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
   line-height: 1.6;
-  color: #333;
-}
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
-/* ================ Bölümler Arası Boşluk ================ */
-.uk-section {
-  padding: 60px 0;
-}
-h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  text-align: center;
-}
-h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-/* ================ HEADER & NAV ================ */
-.header {
-  position: relative;
-  z-index: 1000;
-  background: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.logo img {
-  max-height: 50px;
-}
-.nav-desktop ul li {
-  margin-left: 20px;
-}
-.nav-desktop ul li a {
-  padding: 10px;
-  color: #333;
-  transition: color .3s;
-}
-.nav-desktop ul li a:hover {
-  color: #005b96;
-}
-.nav-toggle span {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-/* ================ MOBİL MENÜ ================ */
-.nav-mobile {
-  display: none;
-}
-.nav-mobile.uk-open {
-  display: block;
-}
-.nav-mobile {
-  background: #005b96;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-}
-.nav-mobile a {
-  color: #ffffff;
-  padding: 15px 20px;
-  display: block;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-/* ================ HİZMETLER KARTLARI ================ */
-#services .service-card {
-  transition: transform .3s;
-}
-#services .service-card:hover {
-  transform: translateY(-5px);
-}
-.service-card i {
-  color: #005b96;
-  margin-bottom: 10px;
-}
-
-/* ================ GALERİ ================ */
-#gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-}
-.uk-grid-small > * {
-  padding: 10px;
-}
-
-/* ================ FORM ================ */
-.uk-form-stacked label {
-  font-weight: bold;
-}
-
-/* ================ İLETİŞİM ================ */
-.social a {
-  margin-right: 15px;
-  color: #333;
-  transition: color .3s;
-}
-.social a:hover {
-  color: #005b96;
-}
-
-/* Menü bullet’larını kaldır */
+/* NAV DESKTOP: bullet’ları kaldır */
 .nav-desktop ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+.nav-desktop .uk-navbar-nav > li > a {
+  color: #333;
+}
+.nav-desktop .uk-navbar-nav > li > a:hover {
+  color: var(--primary-color);
+}
 
-/* Mobil menü arka planını koyulaştır */
-.nav-mobile {
-  background: rgba(0, 91, 150, 0.95);
+/* MOBIL OFFCANVAS */
+.nav-mobile .uk-offcanvas-bar {
+  background-color: #fff;
+}
+.nav-mobile .uk-nav-default > li > a {
+  color: #333;
+}
+.nav-mobile .uk-nav-default > li > a:hover {
+  color: var(--primary-color);
+}
+
+/* HEADER ARKA PLAN */
+.hero {
+  background: url('../images/Klinik (1).jpeg') center/cover no-repeat;
+  position: relative;
+}
+.hero::before {
+  content: '';
   position: absolute;
-  top: 100%;
-  width: 100%;
-  z-index: 999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
-.nav-mobile a {
+.hero .uk-container {
+  position: relative;
+  padding: 8rem 0;
   color: #fff;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
 }
 
-/* Vizyon & Misyon başlıklarını dar ekranda ortala */
-@media (max-width: 960px) {
-  #vision .uk-grid-match > div {
-    text-align: center;
-  }
+/* ORTAK SECTION AYARLARI */
+.uk-section {
+  padding: 4rem 0;
+}
+.uk-section h2 {
+  margin-bottom: 1.5rem;
 }
 
-/* H2 alt boşluğu biraz arttır */
-h2 {
-  margin-bottom: 40px;
+/* SERVIS KARTLARI */
+.service-card {
+  background: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.service-card i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
 }
 
+/* GALERI */
+.gallery-img {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform .3s ease;
+}
+.gallery-img img {
+  width: 100%;
+  display: block;
+}
+.gallery-img:hover {
+  transform: scale(1.02);
+}
+
+/* İLETİŞİM BİLGİLERİ */
+.contact-info p,
+.contact-info a {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+.contact-info i {
+  margin-right: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* FOOTER */
+footer {
+  background: #f8f9fa;
+  padding: 2rem 0;
+}
+footer h4 {
+  margin-bottom: 0.5rem;
+}
+.footer-note {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #777;
+}
