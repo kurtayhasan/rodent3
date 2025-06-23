@@ -32,8 +32,8 @@ h3 {
 .header {
   position: relative;
   z-index: 1000;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .logo img {
   max-height: 50px;
@@ -54,7 +54,7 @@ h3 {
   color: #333;
 }
 
-/* Mobil Menü */
+/* ================ MOBİL MENÜ ================ */
 .nav-mobile {
   display: none;
 }
@@ -62,15 +62,16 @@ h3 {
   display: block;
 }
 .nav-mobile {
-  background: rgba(0,0,0,0.85);
+  background: #005b96;
   position: absolute;
   top: 100%;
   width: 100%;
 }
 .nav-mobile a {
-  color: #fff;
+  color: #ffffff;
   padding: 15px 20px;
   display: block;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 /* ================ HİZMETLER KARTLARI ================ */
