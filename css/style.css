@@ -78,16 +78,30 @@ body {
 }
 
 /* ==============================
-   Bölümler Genel
+   Genel Bölüm Stilleri
    ============================== */
 .section {
   padding: 4rem 1rem;
   text-align: center;
+  box-sizing: border-box;
 }
 .section h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: #0077cc;
+}
+
+/* ==============================
+   İçerik Genişlik Sınırı
+   ============================== */
+.columns,
+.cards,
+.gallery-grid,
+form,
+.map,
+#orgchart img {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* ==============================
@@ -101,6 +115,7 @@ body {
 }
 .columns > div {
   flex: 1 1 300px;
+  text-align: left;
 }
 
 /* ==============================
@@ -118,6 +133,7 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   transition: transform .3s;
+  text-align: left;
 }
 .card:hover {
   transform: translateY(-5px);
@@ -133,7 +149,21 @@ body {
 }
 
 /* ==============================
-   Form & Buton
+   Kurumsal Bilgiler
+   ============================== */
+#corporate ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+#corporate ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* ==============================
+   Randevu Formu
    ============================== */
 form {
   max-width: 400px;
@@ -159,7 +189,7 @@ button:hover {
 }
 
 /* ==============================
-   Harita
+   İletişim Haritası
    ============================== */
 .map iframe {
   width: 100%;
@@ -168,9 +198,17 @@ button:hover {
 }
 
 /* ==============================
+   Organizasyon Şeması
+   ============================== */
+#orgchart img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==============================
    Medya Sorguları
    ============================== */
-
 /* Büyük masaüstü: 1200px üstü */
 @media (max-width: 1200px) {
   .columns > div {
@@ -215,7 +253,7 @@ button:hover {
   }
 }
 
-/* Mobil: 576px üstü */
+/* Mobil: 576px altı */
 @media (max-width: 576px) {
   body {
     font-size: 14px;
