@@ -1,15 +1,16 @@
-// Smooth scroll ve mobil menüyü kapatma
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
+// Sayfa içi linkler için smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    // Offcanvas açıksa kapat
+    const offcanvas = UIkit.offcanvas('#offcanvas-nav');
+    if (offcanvas && offcanvas.isActive()) {
+      offcanvas.hide();
+    }
+    // Smooth scroll
     e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
+    const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
-    }
-    // Mobil menü açıksa kapat
-    const nav = document.querySelector('.nav-mobile');
-    if (nav && nav.classList.contains('uk-open')) {
-      UIkit.toggle(nav).toggle();
     }
   });
 });
