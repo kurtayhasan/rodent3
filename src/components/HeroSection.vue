@@ -1,1 +1,0 @@
-<template><div>HeroSection içeriği buraya gelecek.</div></template>

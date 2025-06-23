@@ -1,1 +1,0 @@
-<template><div>AboutSection içeriği buraya gelecek.</div></template>

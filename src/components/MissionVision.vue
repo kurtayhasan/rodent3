@@ -1,1 +1,0 @@
-<template><div>MissionVision içeriği buraya gelecek.</div></template>

@@ -1,1 +1,0 @@
-<template><div>GallerySection içeriği buraya gelecek.</div></template>
