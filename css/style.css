@@ -111,3 +111,35 @@ h3 {
 .social a:hover {
   color: #005b96;
 }
+
+/* Menü bullet’larını kaldır */
+.nav-desktop ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobil menü arka planını koyulaştır */
+.nav-mobile {
+  background: rgba(0, 91, 150, 0.95);
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 999;
+}
+.nav-mobile a {
+  color: #fff;
+}
+
+/* Vizyon & Misyon başlıklarını dar ekranda ortala */
+@media (max-width: 960px) {
+  #vision .uk-grid-match > div {
+    text-align: center;
+  }
+}
+
+/* H2 alt boşluğu biraz arttır */
+h2 {
+  margin-bottom: 40px;
+}
+
