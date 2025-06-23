@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Rodent Ağız & Diş Sağlığı</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,11 +13,11 @@
   <!-- TOP BAR -->
   <div class="top-bar">
     <div class="container">
-      <span><a href="mailto:info@rodent.com.tr">info@rodent.com.tr</a></span>
-      <span>+90 545 502 8282</span>
+      <span><i class="fas fa-envelope"></i> <a href="mailto:info@rodent.com.tr">info@rodent.com.tr</a></span>
+      <span><i class="fas fa-phone"></i> +90 545 502 8282</span>
       <div class="socials">
-        <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
-        <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </div>
@@ -23,14 +25,38 @@
   <!-- HEADER -->
   <header class="navbar">
     <div class="container header-inner">
-      <a href="#home" class="logo"><img src="images/logo.svg" alt="Rodent"></a>
+      <a href="#home" class="logo"><img src="images/logo.svg" alt="Rodent Logo"></a>
       <button class="menu-toggle" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
       <nav class="nav-desktop">
         <ul>
           <li><a href="#home">Ana Sayfa</a></li>
           <li><a href="#about">Hakkımızda</a></li>
-          <li><a href="#vision">Vizyon & Misyon</a></li>
-          <li><a href="#services">Hizmetler</a></li>
+          <li class="has-dropdown">
+            <a href="#services">Tedavi Hizmetleri</a>
+            <div class="mega-menu">
+              <div class="column">
+                <h4>Protetik & Estetik</h4>
+                <a href="#implant">İmplant</a>
+                <a href="#porselen">Porselen & Zirkonyum</a>
+                <a href="#lamina">Lamina Kaplama</a>
+                <a href="#beyazlatma">Diş Beyazlatma</a>
+              </div>
+              <div class="column">
+                <h4>Endodonti & Cerrahi</h4>
+                <a href="#kanal">Kanal Tedavisi</a>
+                <a href="#cekim">Cerrahi Çekim</a>
+                <a href="#cene">Çene Eklem Tedavisi</a>
+                <a href="#pedodonti">Pedodonti (Çocuk)</a>
+              </div>
+              <div class="column">
+                <h4>Ortodonti & Diğer</h4>
+                <a href="#ortodonti">Diş Teli Tedavisi</a>
+                <a href="#invisalign">Invisalign</a>
+                <a href="#dolgu">Estetik Dolgu</a>
+                <a href="#dijital">Dijital Gülüş Tasarımı</a>
+              </div>
+            </div>
+          </li>
           <li><a href="#gallery">Galeri</a></li>
           <li><a href="#appointment">Randevu</a></li>
           <li><a href="#contact">İletişim</a></li>
@@ -38,12 +64,13 @@
         </ul>
       </nav>
     </div>
+
+    <!-- Mobile Drawer -->
     <nav class="nav-mobile">
       <ul>
         <li><a href="#home">Ana Sayfa</a></li>
         <li><a href="#about">Hakkımızda</a></li>
-        <li><a href="#vision">Vizyon & Misyon</a></li>
-        <li><a href="#services">Hizmetler</a></li>
+        <li><a href="#services">Tedavi Hizmetleri</a></li>
         <li><a href="#gallery">Galeri</a></li>
         <li><a href="#appointment">Randevu</a></li>
         <li><a href="#contact">İletişim</a></li>
@@ -54,7 +81,6 @@
   </header>
 
   <main>
-
     <!-- HERO / SLIDER -->
     <section id="home" class="hero">
       <div class="slides">
@@ -72,7 +98,6 @@
             <a href="#about" class="btn">Hakkımızda</a>
           </div>
         </div>
-        <!-- İsteğe göre slider3…7 ekleyin -->
       </div>
     </section>
 
@@ -121,42 +146,42 @@
         <h2>Hizmetlerimiz</h2>
         <div class="grid-4">
           <div class="card">
-            <img src="images/icon-estetik.svg" alt="Estetik Diş">
+            <i class="fas fa-tooth service-icon"></i>
             <h3>Estetik Diş</h3>
             <p>Doğal gülüşünüzü yeniden kazandırıyoruz.</p>
             <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
-              <img src="images/icon-instagram.svg" alt="Instagram">
+              <i class="fab fa-instagram"></i>
             </a>
           </div>
           <div class="card">
-            <img src="images/icon-implant.svg" alt="İmplant">
+            <i class="fas fa-tooth service-icon"></i>
             <h3>İmplant</h3>
             <p>Kalıcı diş eksikliği çözümleri sunuyoruz.</p>
             <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
-              <img src="images/icon-instagram.svg" alt="Instagram">
+              <i class="fab fa-instagram"></i>
             </a>
           </div>
           <div class="card">
-            <img src="images/icon-ortodonti.svg" alt="Ortodonti">
+            <i class="fas fa-tooth service-icon"></i>
             <h3>Ortodonti</h3>
             <p>Düzgün ve sağlıklı diş dizilimine odaklanıyoruz.</p>
             <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
-              <img src="images/icon-instagram.svg" alt="Instagram">
+              <i class="fab fa-instagram"></i>
             </a>
           </div>
           <div class="card">
-            <img src="images/icon-protez.svg" alt="Protez">
+            <i class="fas fa-tooth service-icon"></i>
             <h3>Protez</h3>
             <p>Konforlu ve estetik protez uygulamaları.</p>
             <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
-              <img src="images/icon-instagram.svg" alt="Instagram">
+              <i class="fab fa-instagram"></i>
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Gallery -->
+    <!-- Galeri -->
     <section id="gallery" class="section gallery">
       <div class="container grid-3">
         <img src="images/galeri1.jpg" alt="">
@@ -168,7 +193,7 @@
       </div>
     </section>
 
-    <!-- Appointment -->
+    <!-- Randevu -->
     <section id="appointment" class="section appointment light-bg">
       <div class="container form-wrap">
         <h2>Randevu Alın</h2>
@@ -181,14 +206,14 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- İletişim -->
     <section id="contact" class="section contact">
       <div class="container grid-2">
         <div class="contact-info">
           <h2>İletişim</h2>
           <p>Adres: Örnek Mah. No:123, Şehir</p>
-          <p>Telefon: +90 545 502 8282</p>
-          <p>Email: info@rodent.com.tr</p>
+          <p><i class="fas fa-phone"></i> +90 545 502 8282</p>
+          <p><i class="fas fa-envelope"></i> info@rodent.com.tr</p>
         </div>
         <div class="map">
           <iframe src="https://www.google.com/maps/embed?pb=…" allowfullscreen></iframe>
@@ -196,14 +221,13 @@
       </div>
     </section>
 
-    <!-- Organization Chart -->
+    <!-- Organizasyon Şeması -->
     <section id="orgchart" class="section orgchart light-bg">
       <div class="container">
         <h2>Organizasyon Şeması</h2>
         <img src="images/org-semasi.png" alt="Organizasyon Şeması">
       </div>
     </section>
-
   </main>
 
   <script src="js/script.js"></script>
