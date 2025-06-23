@@ -24,7 +24,7 @@
   <header class="navbar">
     <div class="container header-inner">
       <a href="#home" class="logo"><img src="images/logo.svg" alt="Rodent"></a>
-      <button class="menu-toggle"><span></span><span></span><span></span></button>
+      <button class="menu-toggle" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
       <nav class="nav-desktop">
         <ul>
           <li><a href="#home">Ana Sayfa</a></li>
@@ -58,7 +58,6 @@
     <!-- HERO / SLIDER -->
     <section id="home" class="hero">
       <div class="slides">
-        <!-- Slider kap arka plan img yerine inline style kullanıyoruz -->
         <div class="slide" style="background-image:url('images/slider1.jpg')">
           <div class="slide-content">
             <h1>Konforlu Tedavi</h1>
@@ -66,12 +65,18 @@
             <a href="#services" class="btn">Hizmetlerimiz</a>
           </div>
         </div>
-        <!-- Aynı yapıyı slider2, slider3… için tekrarlayın -->
+        <div class="slide" style="background-image:url('images/slider2.jpg')">
+          <div class="slide-content">
+            <h1>Uzman Ekip</h1>
+            <p>Deneyimli kadromuzla güvende hissedin.</p>
+            <a href="#about" class="btn">Hakkımızda</a>
+          </div>
+        </div>
+        <!-- İsteğe göre slider3…7 ekleyin -->
       </div>
-      <div class="slider-dots"></div>
     </section>
 
-    <!-- HAKKIMIZDA -->
+    <!-- About -->
     <section id="about" class="section about light-bg">
       <div class="container grid-2">
         <div class="about-text">
@@ -84,91 +89,74 @@
         </div>
       </div>
     </section>
-<section id="vision" class="section vision">
-  <div class="container grid-2">
-    <div class="vm-block">
-      <h2>Vizyonumuz</h2>
-      <p>
-        Ağız ve diş sağlığı tedavilerini tüm uzmanlık dallarında;<br>
-        uluslararası standartlara uygunluğu onaylanmış yöntemlerle ve<br>
-        teknolojinin bütün olanaklarından yararlanarak toplumun her<br>
-        kesimine etkili, güvenli ve kesintisiz olarak hizmet sunmak,<br>
-        sürekli tercih edilen merkez olmak ve bölgesel model oluşturmaktır.
-      </p>
-    </div>
-    <div class="vm-block">
-      <h2>Misyonumuz</h2>
-      <p>
-        Tüm kaynaklarımızı etkin ve verimli bir şekilde kullanarak,<br>
-        hasta ve çalışan memnuniyetini sağlamak;<br>
-        merkezimizin tüm birimlerinde kalite anlayışını standardize<br>
-        ederek sürekli hale getirmektir.
-      </p>
-    </div>
-  </div>
-</section>
 
-
-   
-
-    <!-- HİZMETLER -->
-   <section id="services" class="section services light-bg">
-  <div class="container">
-    <h2>Hizmetlerimiz</h2>
-    <div class="grid-4">
-      <!-- Estetik Diş -->
-      <div class="card">
-        <img src="images/icon-estetik.svg" alt="Estetik Diş">
-        <h3>Estetik Diş</h3>
-        <p>Doğal gülüşünüzü yeniden kazandırıyoruz.</p>
-        <a href="https://www.instagram.com/rodent.agizvedismerkezi/" 
-           target="_blank" 
-           class="insta-link">
-          <img src="images/icon-instagram.svg" alt="Instagram">
-        </a>
+    <!-- Vision & Mission -->
+    <section id="vision" class="section vision">
+      <div class="container grid-2">
+        <div class="vm-block">
+          <h2>Vizyonumuz</h2>
+          <p>
+            Ağız ve diş sağlığı tedavilerini tüm uzmanlık dallarında;<br>
+            uluslararası standartlara uygunluğu onaylanmış yöntemlerle ve<br>
+            teknolojinin bütün olanaklarından yararlanarak toplumun her<br>
+            kesimine etkili, güvenli ve kesintisiz olarak hizmet sunmak,<br>
+            sürekli tercih edilen merkez olmak ve bölgesel model oluşturmaktır.
+          </p>
+        </div>
+        <div class="vm-block">
+          <h2>Misyonumuz</h2>
+          <p>
+            Tüm kaynaklarımızı etkin ve verimli bir şekilde kullanarak,<br>
+            hasta ve çalışan memnuniyetini sağlamak;<br>
+            merkezimizin tüm birimlerinde kalite anlayışını standardize<br>
+            ederek sürekli hale getirmektir.
+          </p>
+        </div>
       </div>
+    </section>
 
-      <!-- İmplant -->
-      <div class="card">
-        <img src="images/icon-implant.svg" alt="İmplant">
-        <h3>İmplant</h3>
-        <p>Kalıcı diş eksikliği çözümleri sunuyoruz.</p>
-        <a href="https://www.instagram.com/rodent.agizvedismerkezi/" 
-           target="_blank" 
-           class="insta-link">
-          <img src="images/icon-instagram.svg" alt="Instagram">
-        </a>
+    <!-- Services -->
+    <section id="services" class="section services light-bg">
+      <div class="container">
+        <h2>Hizmetlerimiz</h2>
+        <div class="grid-4">
+          <div class="card">
+            <img src="images/icon-estetik.svg" alt="Estetik Diş">
+            <h3>Estetik Diş</h3>
+            <p>Doğal gülüşünüzü yeniden kazandırıyoruz.</p>
+            <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
+              <img src="images/icon-instagram.svg" alt="Instagram">
+            </a>
+          </div>
+          <div class="card">
+            <img src="images/icon-implant.svg" alt="İmplant">
+            <h3>İmplant</h3>
+            <p>Kalıcı diş eksikliği çözümleri sunuyoruz.</p>
+            <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
+              <img src="images/icon-instagram.svg" alt="Instagram">
+            </a>
+          </div>
+          <div class="card">
+            <img src="images/icon-ortodonti.svg" alt="Ortodonti">
+            <h3>Ortodonti</h3>
+            <p>Düzgün ve sağlıklı diş dizilimine odaklanıyoruz.</p>
+            <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
+              <img src="images/icon-instagram.svg" alt="Instagram">
+            </a>
+          </div>
+          <div class="card">
+            <img src="images/icon-protez.svg" alt="Protez">
+            <h3>Protez</h3>
+            <p>Konforlu ve estetik protez uygulamaları.</p>
+            <a href="https://www.instagram.com/rodent.agizvedismerkezi/" target="_blank" class="insta-link">
+              <img src="images/icon-instagram.svg" alt="Instagram">
+            </a>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Ortodonti -->
-      <div class="card">
-        <img src="images/icon-ortodonti.svg" alt="Ortodonti">
-        <h3>Ortodonti</h3>
-        <p>Düzgün ve sağlıklı diş dizilimine odaklanıyoruz.</p>
-        <a href="https://www.instagram.com/rodent.agizvedismerkezi/" 
-           target="_blank" 
-           class="insta-link">
-          <img src="images/icon-instagram.svg" alt="Instagram">
-        </a>
-      </div>
-
-      <!-- Protez -->
-      <div class="card">
-        <img src="images/icon-protez.svg" alt="Protez">
-        <h3>Protez</h3>
-        <p>Konforlu ve estetik protez uygulamaları.</p>
-        <a href="https://www.instagram.com/rodent.agizvedismerkezi/" 
-           target="_blank" 
-           class="insta-link">
-          <img src="images/icon-instagram.svg" alt="Instagram">
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- GALERİ -->
+    <!-- Gallery -->
     <section id="gallery" class="section gallery">
       <div class="container grid-3">
         <img src="images/galeri1.jpg" alt="">
@@ -180,7 +168,7 @@
       </div>
     </section>
 
-    <!-- RANDEVU -->
+    <!-- Appointment -->
     <section id="appointment" class="section appointment light-bg">
       <div class="container form-wrap">
         <h2>Randevu Alın</h2>
@@ -193,7 +181,7 @@
       </div>
     </section>
 
-    <!-- İLETİŞİM -->
+    <!-- Contact -->
     <section id="contact" class="section contact">
       <div class="container grid-2">
         <div class="contact-info">
@@ -208,7 +196,7 @@
       </div>
     </section>
 
-    <!-- ORGANİZASYON -->
+    <!-- Organization Chart -->
     <section id="orgchart" class="section orgchart light-bg">
       <div class="container">
         <h2>Organizasyon Şeması</h2>
