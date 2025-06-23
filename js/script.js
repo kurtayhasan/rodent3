@@ -1,46 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // ——————————————————————————————
-  // 1) Mobil Menü & Overlay
-  // ——————————————————————————————
-  const menuToggle = document.querySelector('.menu-toggle');
-  const overlay    = document.querySelector('.overlay');
+// Rodent Website JavaScript
 
-  menuToggle.addEventListener('click', () => {
-    document.body.classList.toggle('nav-open');
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const burger = document.querySelector('.burger');
+  const nav    = document.querySelector('.nav');
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
   });
 
-  overlay.addEventListener('click', () => {
-    document.body.classList.remove('nav-open');
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (nav.classList.contains('active')) {
+        nav.classList.remove('active');
+      }
+    });
   });
 
-  // ——————————————————————————————
-  // 2) Ana Slider (otomatik kayan)
-  // ——————————————————————————————
-  const slidesContainer = document.querySelector('.slides');
-  const slides          = document.querySelectorAll('.slide');
-  let currentIndex      = 0;
-  const slideCount      = slides.length;
-  const intervalTime    = 5000; // ms
-
-  // Slider’ı istediğimiz slayta kaydır
-  function goToSlide(index) {
-    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+  // Telephone input mask (+90 XXX XXX XXX)
+  const telInput = document.querySelector('input[type="tel"]');
+  if (telInput) {
+    telInput.addEventListener('input', function(e) {
+      let digits = e.target.value.replace(/\D/g, '').slice(0,10);
+      let formatted = '+90 ';
+      if (digits.length > 1) {
+        formatted += digits.slice(1,4) + ' ';
+      }
+      if (digits.length >= 5) {
+        formatted += digits.slice(4,7) + ' ';
+      }
+      if (digits.length >= 8) {
+        formatted += digits.slice(7,10);
+      }
+      e.target.value = formatted;
+    });
   }
 
-  // Bir sonraki slayta geç
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % slideCount;
-    goToSlide(currentIndex);
+  // Initialize UIkit Lightbox on gallery
+  if (typeof UIkit !== 'undefined' && UIkit.lightbox) {
+    UIkit.lightbox('.gallery-grid a');
   }
-
-  // Otomatik döngüyü başlat
-  let slideInterval = setInterval(nextSlide, intervalTime);
-
-  // Fare slaytın üstündeyken duraklat, çıkınca devam et
-  slidesContainer.addEventListener('mouseenter', () => {
-    clearInterval(slideInterval);
-  });
-  slidesContainer.addEventListener('mouseleave', () => {
-    slideInterval = setInterval(nextSlide, intervalTime);
-  });
 });
