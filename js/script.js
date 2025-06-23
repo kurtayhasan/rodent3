@@ -1,26 +1,22 @@
-// Slider
-const slides = document.querySelector('.slides');
-const imgs   = document.querySelectorAll('.slides img');
-const total  = imgs.length;
+// Drawer menü toggle
+const navbar     = document.querySelector('.navbar');
+const toggleBtn  = document.querySelector('.menu-toggle');
+const overlay    = document.querySelector('.nav-overlay');
 
-// slides container genişliğini tam kapla
-slides.style.width = `${total * 100}%`;
-// her görsel eşit boyutta
-imgs.forEach(img => img.style.width = `${100 / total}%`);
-
-let idx = 0;
-function showNext() {
-  idx = (idx + 1) % total;
-  slides.style.transform = `translateX(-${idx * (100 / total)}%)`;
+// Menü aç/kapa
+function toggleNav() {
+  navbar.classList.toggle('nav-open');
 }
-setInterval(showNext, 5000);
+toggleBtn.addEventListener('click', toggleNav);
+overlay.addEventListener('click', toggleNav);
 
-// Menü smooth scroll
-document.querySelectorAll('.navbar a').forEach(link =>
+// Smooth scroll tüm menü linkleri için (desktop + mobile)
+document.querySelectorAll('.desktop-nav a, .mobile-nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
-    document
-      .querySelector(link.getAttribute('href'))
-      .scrollIntoView({ behavior: 'smooth' });
-  })
-);
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    toggleNav(); // mobile açıldıysa kapat
+    target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
