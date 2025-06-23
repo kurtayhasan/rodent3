@@ -1,121 +1,78 @@
-/* … önceki genel stilleriniz … */
+=== css/style.css ===
+/* Reset & Temel */
+*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+body { font-family:'Segoe UI',sans-serif; line-height:1.6; color:#333; }
+.light-bg { background:#fafafa; }
 
-/* ----------------------------
-   Header & Menü Ortamı
-   ---------------------------- */
-.navbar {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-  height: 60px;
-}
-.navbar .logo {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #0077cc;
-  text-decoration: none;
-}
+/* Header */
+.navbar { position:fixed; top:0; left:0; width:100%; height:60px; background:rgba(255,255,255,0.95); backdrop-filter:blur(10px); display:flex; align-items:center; padding:0 1rem; z-index:100; }
+.navbar .logo { font-size:1.25rem; font-weight:bold; color:#0077cc; text-decoration:none; }
+.menu-toggle { display:none; margin-left:auto; background:none; border:none; width:24px; height:18px; flex-direction:column; justify-content:space-between; cursor:pointer; }
+.menu-toggle span { display:block; height:3px; background:#333; border-radius:2px; }
+.desktop-nav { margin-left:auto; }
+.desktop-nav ul { display:flex; list-style:none; }
+.desktop-nav li { margin:0 1rem; }
+.desktop-nav a { text-decoration:none; color:#333; font-weight:500; }
+.desktop-nav a:hover { color:#0077cc; }
+.mobile-nav, .nav-overlay { display:none; }
 
-/* Hamburger buton */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: auto;
-}
-.menu-toggle span {
-  display: block;
-  height: 3px;
-  background: #333;
-  border-radius: 2px;
-}
+/* Slider */
+.slider { margin-top:60px; height:80vh; max-height:600px; position:relative; overflow:hidden; }
+.slides { display:flex; width:100%; height:100%; transition:transform .8s ease; }
+.slides img { flex-shrink:0; width:100%; height:100%; object-fit:cover; }
+.intro { position:absolute; bottom:20%; left:10%; background:rgba(0,0,0,0.4); color:#fff; padding:1rem; border-radius:8px; }
 
-/* Desktop menü */
-.desktop-nav {
-  margin-left: auto;
-}
-.desktop-nav ul {
-  display: flex;
-  list-style: none;
-}
-.desktop-nav li {
-  margin: 0 0.75rem;
-}
-.desktop-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-.desktop-nav a:hover {
-  color: #0077cc;
-}
+/* Sections */
+.section { padding:4rem 1rem; text-align:center; }
+.section h2 { font-size:2rem; margin-bottom:1.5rem; color:#0077cc; }
 
-/* Mobile drawer */
-.mobile-nav {
-  position: fixed;
-  top: 0; right: -250px;       /* başta gizli */
-  width: 250px;
-  height: 100%;
-  background: #fff;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.1);
-  transition: right 0.3s ease;
-  z-index: 205;
-  padding-top: 60px;           /* header yüksekliği kadar boşluk */
-}
-.mobile-nav ul {
-  list-style: none;
-  padding: 1rem;
-}
-.mobile-nav li {
-  margin-bottom: 1rem;
-}
-.mobile-nav a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1.1rem;
-}
-.mobile-nav a:hover {
-  color: #0077cc;
+/* Containers */
+.columns, .cards, .gallery-grid, form, .map, #orgchart { max-width:1200px; margin:0 auto; }
+
+/* Vision & Mission */
+.columns { display:flex; flex-wrap:wrap; gap:2rem; }
+.columns > div { flex:1 1 300px; text-align:left; }
+
+/* Services */
+.cards { display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; }
+.card { flex:1 1 250px; padding:1rem; border:1px solid #e0e0e0; border-radius:8px; transition:transform .3s; }
+.card:hover { transform:translateY(-5px); }
+
+/* Gallery */
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; }
+.gallery-grid img { width:100%; height:auto; max-height:200px; object-fit:cover; border-radius:4px; }
+
+/* Corporate Info */
+#corporate ul { list-style:none; max-width:600px; margin:0 auto; text-align:left; }
+#corporate li { margin-bottom:.5rem; }
+
+/* Appointment */
+form { display:flex; flex-direction:column; gap:1rem; max-width:400px; margin:0 auto; }
+input, button { padding:.75rem; border:1px solid #ccc; border-radius:4px; }
+button { background:#0077cc; color:#fff; cursor:pointer; border:none; transition:opacity .3s; }
+button:hover { opacity:.8; }
+
+/* Contact Map */
+.map iframe { width:100%; height:300px; border:0; }
+
+/* Org Chart */
+#orgchart img { display:block; width:100%; max-width:600px; height:auto; margin:0 auto; border-radius:4px; }
+
+/* Drawer & Responsive */
+.nav-overlay { position:fixed; top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;visibility:hidden;transition:opacity .3s;z-index:150; }
+.mobile-nav { position:fixed; top:0; right:-250px; width:250px; height:100%; background:#fff; box-shadow:-2px 0 8px rgba(0,0,0,0.1); transition:right .3s; padding-top:60px; z-index:200; }
+.mobile-nav ul { list-style:none; padding:1rem; }
+.mobile-nav li { margin-bottom:1rem; }
+.mobile-nav a { color:#333; text-decoration:none; font-size:1.1rem; }
+.navbar.nav-open .mobile-nav { right:0; }
+.navbar.nav-open .nav-overlay { display:block; opacity:1; visibility:visible; }
+
+@media(max-width:992px) {
+  .desktop-nav, .cards { display:none; }
+  .menu-toggle { display:flex; }
+  .cards { display:flex; }
 }
 
-/* Overlay */
-.nav-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-  z-index: 200;
+@media(max-width:768px) {
+  .columns > div, #corporate li { flex:1 1 100%; }
 }
-
-/* Açık drawer sınıfı */
-.navbar.nav-open .mobile-nav {
-  right: 0;
-}
-.navbar.nav-open .nav-overlay {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* ----------------------------
-   Sadece mobilde
-   ---------------------------- */
-@media (max-width: 992px) {
-  .desktop-nav { display: none; }
-  .menu-toggle { display: flex; }
-}
-
-/* … geri kalan responsive stilleriniz … */
