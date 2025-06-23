@@ -1,0 +1,1 @@
+<template><div>AppointmentSection içeriği buraya gelecek.</div></template>
