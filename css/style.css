@@ -41,12 +41,41 @@ body { font-family:'Segoe UI',sans-serif; color:var(--dark); line-height:1.6; }
 .slide-content h1 { font-size:2rem; margin-bottom:.5rem; color:var(--primary); }
 .btn { display:inline-block; padding:.75rem 1.5rem; background:var(--primary); color:#fff; border-radius:var(--radius); text-decoration:none; }
 
-/* Sections */
-.section { padding:4rem 0; }
-.light-bg { background:var(--light); }
-.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
-.grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; }
-.grid-4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:2rem; }
+/* Hizmet Kartları */
+.card {
+  position: relative;
+  padding: 2rem 1rem 3rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform .3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+/* Instagram link ve ikon */
+.insta-link {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+.insta-link img {
+  width: 100%;
+  height: auto;
+}
+.insta-link:hover {
+  transform: scale(1.2);
+}
+
 
 /* About */
 .about-text h2 { font-size:2rem; margin-bottom:1rem; color:var(--primary); }
