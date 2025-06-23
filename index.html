@@ -2,254 +2,194 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rodent Ağız ve Diş Sağlığı</title>
 
   <!-- UIkit CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/css/uikit.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3/dist/css/uikit.min.css" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-p6O1Kqz9F3G7XlYf7aA84sVoxLK+LZ7Oc5Lr3GvG+7hcuTpVnXnKg3pqSejZ0Q+9GvWYTtafiYjCMdTm9d2EvA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome (ikonlar için) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Proje CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Özel stil -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- HEADER & NAVBAR -->
-  <header>
-    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar uk-sticky="top: 100; animation: uk-animation-slide-top;">
-      <div class="uk-container">
-        <div class="uk-navbar-left">
-          <a href="#" class="uk-navbar-item uk-logo">
-            <img src="images/logo.png" alt="Rodent Logo" />
-          </a>
-        </div>
-        <div class="uk-navbar-right nav-desktop">
-          <ul class="uk-navbar-nav">
-            <li><a href="#hakkimizda"><i class="fas fa-info-circle"></i> Hakkımızda</a></li>
-            <li><a href="#vizyon"><i class="fas fa-bullseye"></i> Vizyon &amp; Misyon</a></li>
-            <li><a href="#hizmetler"><i class="fas fa-hands-helping"></i> Hizmetlerimiz</a></li>
-            <li><a href="#galeri"><i class="fas fa-images"></i> Galeri</a></li>
-            <li><a href="#randevu"><i class="fas fa-calendar-check"></i> Randevu Al</a></li>
-            <li><a href="#iletisim"><i class="fas fa-envelope"></i> İletişim</a></li>
-          </ul>
-        </div>
-        <!-- Mobil Toggle -->
-        <div class="uk-navbar-right uk-hidden@m">
-          <a class="uk-navbar-toggle" uk-toggle="target: #offcanvas-nav"><span uk-navbar-toggle-icon></span></a>
-        </div>
+  <!-- NAVBAR -->
+  <header uk-sticky="top: 100; cls-active: uk-navbar-sticky">
+    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+      <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="#">
+          <img src="images/logo.png" alt="Rodent Klinik Logo" height="50">
+        </a>
+      </div>
+      <div class="uk-navbar-center uk-visible@s">
+        <ul class="uk-navbar-nav">
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#vizyon">Vizyon & Misyon</a></li>
+          <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#randevu">Randevu Al</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="uk-navbar-right">
+        <a class="uk-navbar-toggle uk-hidden@s" uk-navbar-toggle-icon href="#offcanvas-nav" uk-toggle></a>
       </div>
     </nav>
-
-    <!-- Hero / Başlık Bölümü -->
-    <div class="hero">
-      <div class="uk-container">
-        <h1>Rodent Ağız ve Diş Sağlığı</h1>
-        <p>Polikliniğimiz, diş hekimliğinin tüm branşlarının uygulandığı güvenilir merkez.</p>
-        <a href="#randevu" class="uk-button uk-button-primary uk-button-large">Randevu Al</a>
-      </div>
-    </div>
   </header>
 
-  <!-- Mobil Offcanvas Menü -->
-  <div id="offcanvas-nav" uk-offcanvas="overlay: true" class="nav-mobile">
-    <div class="uk-offcanvas-bar">
+  <!-- OFFCANVAS MOBILE MENU -->
+  <div id="offcanvas-nav" uk-offcanvas="overlay: true; mode: slide">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
       <button class="uk-offcanvas-close" type="button" uk-close></button>
-      <ul class="uk-nav uk-nav-default">
-        <li><a href="#hakkimizda"><i class="fas fa-info-circle"></i> Hakkımızda</a></li>
-        <li><a href="#vizyon"><i class="fas fa-bullseye"></i> Vizyon &amp; Misyon</a></li>
-        <li><a href="#hizmetler"><i class="fas fa-hands-helping"></i> Hizmetlerimiz</a></li>
-        <li><a href="#galeri"><i class="fas fa-images"></i> Galeri</a></li>
-        <li><a href="#randevu"><i class="fas fa-calendar-check"></i> Randevu Al</a></li>
-        <li><a href="#iletisim"><i class="fas fa-envelope"></i> İletişim</a></li>
+      <ul class="uk-nav uk-nav-default uk-margin-top">
+        <li><a href="#hakkimizda" uk-toggle>Hakkımızda</a></li>
+        <li><a href="#vizyon" uk-toggle>Vizyon & Misyon</a></li>
+        <li><a href="#hizmetler" uk-toggle>Hizmetlerimiz</a></li>
+        <li><a href="#galeri" uk-toggle>Galeri</a></li>
+        <li><a href="#randevu" uk-toggle>Randevu Al</a></li>
+        <li><a href="#iletisim" uk-toggle>İletişim</a></li>
       </ul>
-      <div class="uk-section uk-section-small contact-info">
-        <p><i class="fas fa-phone"></i> +90 545 502 8282</p>
-        <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
-        <p><i class="fas fa-envelope"></i> info@rodent.com</p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
-          <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
-        </div>
-      </div>
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
-  <main>
+  <!-- HERO / FULLSCREEN -->
+  <section class="hero uk-cover-container uk-light">
+    <img src="images/hero.jpg" alt="" uk-cover>
+    <div class="uk-overlay-primary uk-position-cover"></div>
+    <div class="uk-position-center uk-text-center uk-container">
+      <h1 class="uk-heading-large">Sağlıklı Bir Gülüşe Giden Yol</h1>
+      <p class="uk-text-lead">En ileri teknolojiyle konforlu ve güvenli tedavi</p>
+      <a href="#hizmetler" class="uk-button uk-button-primary uk-button-large uk-margin-top">Tedavilerimiz</a>
+    </div>
+  </section>
 
-    <!-- Hakkımızda -->
-    <section id="hakkimizda" class="uk-section">
-      <div class="uk-container">
-        <h2>Hakkımızda</h2>
-        <p>Polikliniğimiz, diş hekimliğinin tüm branşlarının uygulandığı güvenilir bir merkezdir.</p>
-      </div>
+  <main class="uk-margin-large-top">
+
+    <!-- HAKKIMIZDA -->
+    <section id="hakkimizda" class="uk-section uk-section-default uk-container">
+      <h2 class="uk-heading-bullet">Hakkımızda</h2>
+      <p>Polikliniğimiz, diş hekimliğinin tüm branşlarını uygulayan modern bir merkezdir. Hasta memnuniyetini ve hijyeni en üst düzeyde tutarız.</p>
     </section>
 
-    <!-- Vizyon & Misyon -->
-    <section id="vizyon" class="uk-section uk-section-muted">
-      <div class="uk-container">
-        <h2>Vizyon &amp; Misyon</h2>
-        <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
-          <div>
-            <h3>Vizyon</h3>
-            <p>En ileri teknolojiyi kullanarak hastalarımıza konforlu ve güvenli tedavi sunmak.</p>
-          </div>
-          <div>
-            <h3>Misyon</h3>
-            <p>Hasta memnuniyetini her zaman en üst seviyede tutmak ve doğal diş yapısını korumak.</p>
-          </div>
+    <!-- VİZYON & MİSYON -->
+    <section id="vizyon" class="uk-section uk-section-muted uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>Vizyon &amp; Misyon</span></h2>
+      <div class="uk-grid-match uk-child-width-1-2@m uk-grid-small" uk-grid>
+        <div>
+          <h4>Vizyon</h4>
+          <p>En ileri teknolojiyi kullanarak hastalarımıza konforlu ve güvenli tedavi sunmak.</p>
+        </div>
+        <div>
+          <h4>Misyon</h4>
+          <p>Hasta memnuniyetini her zaman en üst seviyede tutmak ve doğal diş yapılarını korumak.</p>
         </div>
       </div>
     </section>
 
-    <!-- Hizmetlerimiz -->
-    <section id="hizmetler" class="uk-section">
-      <div class="uk-container">
-        <h2>Hizmetlerimiz</h2>
-        <div class="uk-grid-match uk-child-width-1-3@m uk-grid-small" uk-grid>
-          <div class="service-card">
-            <i class="fas fa-tooth"></i>
-            <h3>İmplant</h3>
+    <!-- HİZMETLERİMİZ -->
+    <section id="hizmetler" class="uk-section uk-section-default uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>Hizmetlerimiz</span></h2>
+      <div class="uk-grid-match uk-child-width-1-3@m uk-grid-small uk-text-center" uk-grid>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <span class="uk-icon uk-margin-small-bottom" uk-icon="icon: tooth; ratio: 2"></span>
+            <h4>İmplant</h4>
             <p>Kalıcı diş kökü çözümü.</p>
           </div>
-          <div class="service-card">
-            <i class="fas fa-heartbeat"></i>
-            <h3>Porselen Kaplama</h3>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <span class="uk-icon uk-margin-small-bottom" uk-icon="icon: paint-bucket; ratio: 2"></span>
+            <h4>Porselen Kaplama</h4>
             <p>Estetik ve dayanıklı.</p>
           </div>
-          <div class="service-card">
-            <i class="fas fa-brush"></i>
-            <h3>Diş Beyazlatma</h3>
-            <p>Şeffaf plak ve lazer.</p>
-          </div>
-          <div class="service-card">
-            <i class="fas fa-file-medical-alt"></i>
-            <h3>Kanal Tedavisi</h3>
-            <p>Ağrısız kök kanal tedavisi çözümleri.</p>
-          </div>
-          <div class="service-card">
-            <i class="fas fa-teeth"></i>
-            <h3>Ortodonti</h3>
-            <p>Diş teli ve hizalama.</p>
-          </div>
-          <div class="service-card">
-            <i class="fas fa-band-aid"></i>
-            <h3>Dolgu</h3>
-            <p>Kompozit ve amalgam dolgular.</p>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body">
+            <span class="uk-icon uk-margin-small-bottom" uk-icon="icon: brightness-7; ratio: 2"></span>
+            <h4>Diş Beyazlatma</h4>
+            <p>Şeffaf plak ve lazer destekli.</p>
           </div>
         </div>
+        <!-- Yeni hizmet kartları eklenecekse aşağıya kopyala -->
       </div>
     </section>
 
-    <!-- Galeri -->
-    <section id="galeri" class="uk-section uk-section-muted">
-      <div class="uk-container">
-        <h2>Galeri</h2>
-        <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid uk-lightbox="animation: slide">
-          <div class="gallery-img">
-            <a href="images/galeri1.jpg" data-caption="Kliniğimizden bir kare">
-              <img src="images/galeri1.jpg" alt="Galeri 1">
+    <!-- GALERİ -->
+    <section id="galeri" class="uk-section uk-section-muted uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>Galeri</span></h2>
+      <div uk-lightbox="animation: fade">
+        <div class="uk-child-width-1-3@m uk-grid-small" uk-grid>
+          <div>
+            <a href="images/galeri1.jpg">
+              <img src="images/galeri1_thumb.jpg" alt="">
             </a>
           </div>
-          <div class="gallery-img">
-            <a href="images/galeri2.jpg" data-caption="Tedavi odası">
-              <img src="images/galeri2.jpg" alt="Galeri 2">
+          <div>
+            <a href="images/galeri2.jpg">
+              <img src="images/galeri2_thumb.jpg" alt="">
             </a>
           </div>
-          <div class="gallery-img">
-            <a href="images/galeri3.jpg" data-caption="Hijyenik ortam">
-              <img src="images/galeri3.jpg" alt="Galeri 3">
+          <div>
+            <a href="images/galeri3.jpg">
+              <img src="images/galeri3_thumb.jpg" alt="">
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Randevu Formu -->
-    <section id="randevu" class="uk-section">
-      <div class="uk-container">
-        <h2>Randevu Al</h2>
-        <form class="uk-form-stacked uk-margin-auto" style="max-width:400px;">
-          <div class="uk-margin">
-            <label class="uk-form-label" for="name">Adınız Soyadınız</label>
-            <div class="uk-form-controls">
-              <input class="uk-input" id="name" type="text" placeholder="Adınız Soyadınız">
-            </div>
+    <!-- RANDEVU FORMU -->
+    <section id="randevu" class="uk-section uk-section-default uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>Randevu Al</span></h2>
+      <form class="uk-form-stacked uk-width-1-2@m uk-margin-auto">
+        <div class="uk-margin">
+          <label class="uk-form-label" for="adsoyad">Adınız Soyadınız</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" id="adsoyad" type="text" placeholder="Adınız Soyadınız">
           </div>
-          <div class="uk-margin">
-            <label class="uk-form-label" for="phone">Telefon Numaranız</label>
-            <div class="uk-form-controls">
-              <input class="uk-input" id="phone" type="tel" placeholder="+90 5__ ___ ____">
-            </div>
+        </div>
+        <div class="uk-margin">
+          <label class="uk-form-label" for="telefon">Telefon Numaranız</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" id="telefon" type="tel" placeholder="+90 5__ ___ ____">
           </div>
-          <div class="uk-margin">
-            <label class="uk-form-label" for="date">Randevu Tarihi</label>
-            <div class="uk-form-controls">
-              <input class="uk-input" id="date" type="date">
-            </div>
+        </div>
+        <div class="uk-margin">
+          <label class="uk-form-label" for="tarih">Randevu Tarihi</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" id="tarih" type="date">
           </div>
-          <button type="submit" class="uk-button uk-button-primary uk-width-1-1">Gönder</button>
-        </form>
-      </div>
+        </div>
+        <button type="submit" class="uk-button uk-button-primary uk-width-1-1">Gönder</button>
+      </form>
     </section>
 
-    <!-- İletişim -->
-    <section id="iletisim" class="uk-section uk-section-muted">
-      <div class="uk-container">
-        <h2>İletişim</h2>
-        <div class="uk-grid-match uk-child-width-1-2@m uk-grid-small" uk-grid>
-          <div>
-            <h3>Bize Ulaşın</h3>
-            <p><i class="fas fa-phone"></i> +90 545 502 8282</p>
-            <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
-            <p><i class="fas fa-envelope"></i> info@rodent.com</p>
-          </div>
-          <div>
-            <h3>Sosyal Medya</h3>
-            <div class="social-icons">
-              <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-              <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-            </div>
-          </div>
+    <!-- İLETİŞİM -->
+    <section id="iletisim" class="uk-section uk-section-muted uk-container">
+      <h2 class="uk-heading-line uk-text-center"><span>İletişim</span></h2>
+      <div class="uk-grid-match uk-child-width-1-2@m uk-grid-small" uk-grid>
+        <div>
+          <h4>Adres</h4>
+          <p>123 Sağlık Caddesi, Medicity, İstanbul</p>
+        </div>
+        <div>
+          <h4>Telefon &amp; E-posta</h4>
+          <p>+90 545 502 8282<br><a href="mailto:info@rodentklinik.com">info@rodentklinik.com</a></p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="uk-container">
-      <div class="uk-grid-match uk-child-width-1-3@m uk-grid-small" uk-grid>
-        <div>
-          <h4>Adres</h4>
-          <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
-        </div>
-        <div>
-          <h4>Telefon</h4>
-          <p><i class="fas fa-phone"></i> +90 545 502 8282</p>
-        </div>
-        <div>
-          <h4>Email</h4>
-          <p><i class="fas fa-envelope"></i> info@rodent.com</p>
-        </div>
-      </div>
-      <p class="footer-note">&copy; 2025 Rodent Ağız ve Diş Sağlığı. Tüm hakları saklıdır.</p>
-    </div>
-  </footer>
-
   <!-- UIkit JS -->
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/js/uikit.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.22/dist/js/uikit-icons.min.js"></script>
-  <!-- Font Awesome JS (opsiyonel) -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
-          integrity="sha512-kNUm9Xj7StsKxY3kKjK4j+z0JmDV0/k4ARI/bVy43LrR1vbFFt6V8q3/EqzeLI0k6kf2buoVKL5RYLJ4h4X3Rw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- Proje JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3/dist/js/uikit-icons.min.js"></script>
+
+  <!-- Özel script -->
   <script src="js/script.js"></script>
 </body>
 </html>
