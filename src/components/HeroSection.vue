@@ -1,0 +1,1 @@
+<template><section><h2>HeroSection</h2><img src='/assets/Klinik (1).jpeg' style='width:100%; max-width:800px;' /></section></template>
