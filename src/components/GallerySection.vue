@@ -1,1 +1,0 @@
-<template><section><h2>GallerySection</h2><img src='/assets/Klinik (1).jpeg' style='width:100%; max-width:800px;' /></section></template>
