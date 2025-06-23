@@ -5,3 +5,17 @@ UIkit.util.on('#offcanvas-nav', 'beforeshow', () => {
 UIkit.util.on('#offcanvas-nav', 'beforehide', () => {
   document.body.style.overflow = '';
 });
+const menuToggle = document.querySelector('.menu-toggle');
+const body = document.body;
+const navLinks = document.querySelectorAll('.nav-mobile a');
+
+menuToggle.addEventListener('click', () => {
+  body.classList.toggle('nav-open');
+});
+
+// Mobil menüdeki bir bağlantıya tıklandığında menüyü kapat
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    body.classList.remove('nav-open');
+  });
+});
