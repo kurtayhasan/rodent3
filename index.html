@@ -3,22 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rodent Diş Kliniği</title>
+  <title>XYZ Diş Kliniği</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Sabit Üst Menü -->
-   <header class="navbar">
-    <a href="#" class="logo">XYZ Diş Kliniği</a>
 
-    <!-- Hamburger -->
+  <!-- HEADER & NAVIGATION -->
+  <header class="navbar">
+    <a href="#home" class="logo">XYZ Diş Kliniği</a>
     <button class="menu-toggle" aria-label="Menüyü aç">
       <span></span>
       <span></span>
       <span></span>
     </button>
-
-    <!-- Desktop nav -->
     <nav class="desktop-nav">
       <ul>
         <li><a href="#home">Ana Sayfa</a></li>
@@ -32,8 +29,6 @@
         <li><a href="#orgchart">Organizasyon</a></li>
       </ul>
     </nav>
-
-    <!-- Mobile drawer nav -->
     <nav class="mobile-nav">
       <ul>
         <li><a href="#home">Ana Sayfa</a></li>
@@ -49,101 +44,117 @@
     </nav>
     <div class="nav-overlay"></div>
   </header>
-  <!-- Ana Sayfa / Slider -->
-  <section id="home" class="slider" style="background-image: url('images/Klinik (1).jpeg')">
-    <div class="slides">
-      <img src="images/slider1.jpg" alt="">
-      <img src="images/slider2.jpg" alt="">
-      <img src="images/slider3.jpg" alt="">
-      <img src="images/slider4.jpg" alt="">
-      <img src="images/slider5.jpg" alt="">
-      <img src="images/slider6.jpg" alt="">
-      <img src="images/slider7.jpg" alt="">
-    </div>
-    <div class="intro">
-      <h1>Hoş Geldiniz</h1>
-      <p>Sağlığınız, önceliğimiz.</p>
-    </div>
-  </section>
 
-  <!-- Hakkımızda -->
-  <section id="about" class="section">
-    <h2>Hakkımızda</h2>
-    <p>Kuruluşumuzdan bu yana en yüksek kaliteyi sunuyoruz.</p>
-  </section>
-
-  <!-- Vizyon & Misyon -->
-  <section id="vision" class="section light-bg">
-    <h2>Vizyon &amp; Misyon</h2>
-    <div class="columns">
-      <div>
-        <h3>Vizyon</h3>
-        <p>Sağlıkta mükemmellik.</p>
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Slider / Hero -->
+    <section id="home" class="slider">
+      <div class="slides">
+        <img src="images/slider1.jpg" alt="">
+        <img src="images/slider2.jpg" alt="">
+        <img src="images/slider3.jpg" alt="">
+        <img src="images/slider4.jpg" alt="">
+        <img src="images/slider5.jpg" alt="">
+        <img src="images/slider6.jpg" alt="">
+        <img src="images/slider7.jpg" alt="">
       </div>
-      <div>
-        <h3>Misyon</h3>
-        <p>Hastalarımıza güven ve konfor sunmak.</p>
+      <div class="intro">
+        <h1>Hoş Geldiniz</h1>
+        <p>Sağlığınız, önceliğimiz.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Kurumsal Bilgiler -->
-  <section id="corporate" class="section">
-    <h2>Kurumsal Bilgiler</h2>
-    <ul>
-      <li>TC Kimlik No: ...</li>
-      <li>Vergi No: ...</li>
-      <li>Adres: ...</li>
-    </ul>
-  </section>
+    <!-- Hakkımızda -->
+    <section id="about" class="section">
+      <h2>Hakkımızda</h2>
+      <p>Kuruluşumuzdan bu yana en yüksek kaliteyi sunuyoruz.</p>
+    </section>
 
-  <!-- Hizmetler -->
-  <section id="services" class="section light-bg">
-    <h2>Hizmetlerimiz</h2>
-    <div class="cards">
-      <div class="card"><h3>Estetik Diş</h3><p>...</p></div>
-      <div class="card"><h3>İmplant</h3><p>...</p></div>
-      <div class="card"><h3>Ortodonti</h3><p>...</p></div>
-      <div class="card"><h3>Protez</h3><p>...</p></div>
-    </div>
-  </section>
+    <!-- Vizyon & Misyon -->
+    <section id="vision" class="section light-bg">
+      <h2>Vizyon & Misyon</h2>
+      <div class="columns">
+        <div>
+          <h3>Vizyon</h3>
+          <p>Sağlıkta mükemmellik.</p>
+        </div>
+        <div>
+          <h3>Misyon</h3>
+          <p>Hastalarımıza güven ve konfor sunmak.</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Galeri -->
-  <section id="gallery" class="section">
-    <h2>Galeri</h2>
-    <div class="gallery-grid">
-      <img src="images/galeri1.jpg" alt="">
-      <img src="images/galeri2.jpg" alt="">
-      <img src="images/galeri3.jpg" alt="">
-    </div>
-  </section>
+    <!-- Kurumsal Bilgiler -->
+    <section id="corporate" class="section">
+      <h2>Kurumsal Bilgiler</h2>
+      <ul>
+        <li>TC Kimlik No: …</li>
+        <li>Vergi No: …</li>
+        <li>Adres: …</li>
+      </ul>
+    </section>
 
-  <!-- Randevu -->
-  <section id="appointment" class="section light-bg">
-    <h2>Randevu</h2>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Adınız Soyadınız" required>
-      <input type="tel" name="phone" placeholder="Telefon" required>
-      <input type="datetime-local" name="date" required>
-      <button type="submit">Gönder</button>
-    </form>
-  </section>
+    <!-- Hizmetler -->
+    <section id="services" class="section light-bg">
+      <h2>Hizmetlerimiz</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Estetik Diş</h3>
+          <p>...</p>
+        </div>
+        <div class="card">
+          <h3>İmplant</h3>
+          <p>...</p>
+        </div>
+        <div class="card">
+          <h3>Ortodonti</h3>
+          <p>...</p>
+        </div>
+        <div class="card">
+          <h3>Protez</h3>
+          <p>...</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- İletişim -->
-  <section id="contact" class="section">
-    <h2>İletişim</h2>
-    <p>Adres: ...</p>
-    <p>Telefon: ...</p>
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen></iframe>
-    </div>
-  </section>
+    <!-- Galeri -->
+    <section id="gallery" class="section">
+      <h2>Galeri</h2>
+      <div class="gallery-grid">
+        <img src="images/galeri1.jpg" alt="">
+        <img src="images/galeri2.jpg" alt="">
+        <img src="images/galeri3.jpg" alt="">
+      </div>
+    </section>
 
-  <!-- Organizasyon Şeması -->
-  <section id="orgchart" class="section light-bg">
-    <h2>Organizasyon Şeması</h2>
-    <img src="images/org-semasi.png" alt="Organizasyon Şeması">
-  </section>
+    <!-- Randevu -->
+    <section id="appointment" class="section light-bg">
+      <h2>Randevu</h2>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+        <input type="tel" name="phone" placeholder="Telefon" required>
+        <input type="datetime-local" name="date" required>
+        <button type="submit">Gönder</button>
+      </form>
+    </section>
+
+    <!-- İletişim -->
+    <section id="contact" class="section">
+      <h2>İletişim</h2>
+      <p>Adres: …</p>
+      <p>Telefon: …</p>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=…" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Organizasyon Şeması -->
+    <section id="orgchart" class="section light-bg">
+      <h2>Organizasyon Şeması</h2>
+      <img src="images/org-semasi.png" alt="Organizasyon Şeması">
+    </section>
+  </main>
 
   <script src="js/script.js"></script>
 </body>
