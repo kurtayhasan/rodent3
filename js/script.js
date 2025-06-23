@@ -19,7 +19,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Hero slider otomasyonu
+// Hero slider
 const slides = document.querySelector('.slides');
 const total  = slides.children.length;
 let idx = 0;
