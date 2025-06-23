@@ -1,4 +1,4 @@
-// Tüm iç bağlantıları (anchor) smooth scroll yap
+// Smooth scroll ve mobil menüyü kapatma
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
