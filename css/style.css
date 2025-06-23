@@ -1,79 +1,159 @@
-/* Varsayılan reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Poppins', sans-serif; color: #333; }
-
-/* Top bar */
-.top-bar { background: #f5f5f5; font-size: 14px; }
-.top-bar a { color: #333; text-decoration: none; }
-.top-bar .social-links img { width: 20px; margin-left: 10px; }
-
-/* Navbar */
-.uk-navbar-container { box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-.uk-navbar-nav > li > a { font-weight: 500; }
-.uk-navbar-nav > li > a:hover { color: #0aadc3; }
-
-/* HERO */
-.hero {
-  position: relative;
-  background: url('../images/klinik1.jpg') center/cover no-repeat;
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+:root {
+  --primary: #0077cc;
+  --light: #f9faff;
+  --dark: #333;
+  --radius: 1.2rem;
+  --shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
-.hero .overlay {
-  position: absolute; top:0; left:0; right:0; bottom:0;
-  background: rgba(0,0,0,0.4);
-}
-.hero-content { position: relative; z-index: 1; }
-.hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
-.hero-content p { font-size: 1.2rem; margin-bottom: 1.5rem; }
 
-/* SECTION BAŞLIKLARI */
-.section { padding: 60px 0; }
-.light-bg { background: #fafafa; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',sans-serif; color:var(--dark); line-height:1.6; }
+.container { width:90%; max-width:1200px; margin:0 auto; }
+
+/* Top Bar */
+.top-bar { background:var(--light); font-size:.9rem; }
+.top-bar .container { display:flex; justify-content:space-between; align-items:center; padding:.5rem 0; }
+.top-bar a { color:var(--dark); text-decoration:none; }
+
+/* Header */
+.navbar { position:sticky; top:0; background:#fff; box-shadow:var(--shadow); z-index:200; }
+.header-inner { display:flex; align-items:center; height:60px; }
+.logo img { height:40px; }
+.menu-toggle { display:none; margin-left:auto; width:24px; height:18px; background:none; border:none; flex-direction:column; justify-content:space-between; cursor:pointer; }
+.menu-toggle span { display:block; height:3px; background:var(--dark); border-radius:2px; }
+
+/* Desktop Nav */
+.nav-desktop ul { list-style:none; display:flex; gap:1rem; margin-left:auto; }
+.nav-desktop a { color:var(--dark); text-decoration:none; font-weight:500; padding:.5rem; transition:color .2s; }
+.nav-desktop a:hover { color:var(--primary); }
+
+/* Mobile Nav */
+.nav-mobile {
+  position:fixed; top:0; right:-280px; width:280px; height:100%;
+  /* değişiklik: tema rengi arka plan */
+  background: var(--primary);
+  box-shadow:-2px 0 12px rgba(0,0,0,0.1);
+  transition:right .3s; padding-top:60px; z-index:210;
+}
+.nav-mobile ul { list-style:none; padding:1rem; }
+.nav-mobile li + li { margin-top:1rem; }
+.nav-mobile a {
+  /* değişiklik: beyaz link */
+  color:#fff;
+  text-decoration:none; font-size:1.1rem;
+}
+
+/* overlay */
+.overlay {
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.4); opacity:0; visibility:hidden;
+  transition:opacity .3s; z-index:205;
+}
+.nav-open .nav-mobile { right:0; }
+.nav-open .overlay    { opacity:1; visibility:visible; }
+
+/* Hero/Slider */
+.hero { position:relative; overflow:hidden; height:80vh; max-height:650px; }
+.slides { display:flex; height:100%; transition:transform 1s ease; }
+.slide { flex:1 0 100%; background-size:cover; background-position:center; position:relative; }
+.slide-content {
+  position:absolute; bottom:20%; left:10%;
+  background:rgba(255,255,255,0.9); padding:1.5rem;
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.slide-content h1 { font-size:2rem; margin-bottom:.5rem; color:var(--primary); }
+.btn { display:inline-block; padding:.75rem 1.5rem; background:var(--primary); color:#fff; border-radius:var(--radius); text-decoration:none; }
+
+/* Bölümler arası boşluk ve başlık ikon spacing */
+.section { padding:4rem 0; }
+.section + .section { margin-top:2rem; }
+
 .section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2rem;
-  position: relative;
-}
-.section h2::after {
-  content: '';
-  width: 60px;
-  height: 3px;
-  background: #0aadc3;
-  display: block;
-  margin: 10px auto 0;
+  font-size:2rem;
+  margin-bottom:1.5rem;
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  color:var(--dark);
 }
 
-/* VİZYON & MİSYON */
-.vision-grid h3 { margin-bottom: 10px; color: #0aadc3; }
+/* Grid sistemleri */
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+.grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; }
+.grid-4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:2rem; }
 
-/* SLIDER UYKUN */
-.uk-slideshow-items img { opacity: 0.9; }
-
-/* GALLERY */
-.gallery img { width: 100%; display: block; border-radius: 5px; transition: transform .3s; }
-.gallery img:hover { transform: scale(1.05); }
-
-/* APPOINTMENT FORM */
-form.uk-input, form.uk-button {
-  border-radius: 5px;
+/* About */
+.about-text h2 { color:var(--primary); }
+.btn-outline {
+  display:inline-block; margin-top:1rem;
+  padding:.5rem 1rem; color:var(--primary);
+  border:2px solid var(--primary);
+  border-radius:var(--radius);
+  text-decoration:none;
 }
-.uk-button-primary { background: #0aadc3; border-color: #0aadc3; }
-.uk-button-primary:hover { background: #087f94; border-color: #087f94; }
 
-/* ORGANIZATION CHART */
-#orgchart img { max-width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+/* Vision & Mission */
+.vision .vm-block h2 { color:var(--primary); margin-bottom:.75rem; font-size:1.8rem; }
+.vision .vm-block p { font-size:1rem; line-height:1.6; color:#555; }
 
-/* Footer */
-footer { background: #333; color: #aaa; }
+/* Services */
+.card {
+  background:#fff; padding:2rem 1rem; text-align:center;
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  position:relative; transition:transform .3s;
+}
+.card:hover { transform:translateY(-5px); }
+.card img { width:60px; margin-bottom:1rem; }
+.insta-link {
+  position:absolute; bottom:1rem; right:1rem;
+  width:24px; height:24px; transition:transform .2s ease;
+}
+.insta-link img { width:100%; height:auto; }
+.insta-link:hover { transform:scale(1.2); }
 
-/* OFFCANVAS OVERLAY GÖRÜNÜRLÜĞÜ */
-.uk-offcanvas-bar { background: #fff; }
+/* Gallery */
+.gallery img {
+  width:100%; height:auto;
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
 
-/* Responsive tweeks */
-@media(max-width: 600px) {
-  .hero-content h1 { font-size: 2rem; }
+/* Appointment */
+.form-wrap { text-align:center; }
+form {
+  display:inline-grid; grid-gap:1rem;
+  max-width:400px; width:100%;
+}
+form input, form button {
+  width:100%; padding:.75rem;
+  border-radius:var(--radius); border:1px solid #ccc;
+}
+form button {
+  background:var(--primary); color:#fff;
+  border:none; cursor:pointer;
+}
+
+/* Contact */
+.contact-info h2 { font-size:2rem; margin-bottom:1rem; color:var(--primary); }
+
+/* Org Chart */
+.orgchart img {
+  width:100%; max-width:600px;
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+
+/* Menü ikonlarına biraz boşluk */
+.nav-desktop a i,
+.nav-mobile a i {
+  margin-right:0.5rem;
+}
+
+/* Responsives */
+@media(max-width:992px) {
+  .nav-desktop { display:none; }
+  .menu-toggle { display:flex; }
+  .grid-2 { grid-template-columns:1fr; }
+}
+@media(max-width:768px) {
+  .slide-content { left:5%; right:5%; bottom:15%; }
+  .slide-content h1 { font-size:1.5rem; }
 }
