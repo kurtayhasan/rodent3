@@ -1,1 +1,0 @@
-<template><section class='py-12 bg-white text-center'>Randevu Formu</section></template>
