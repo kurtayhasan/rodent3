@@ -194,47 +194,42 @@
       background: #b6855e;
     }
 
-    /* ——— ORGANIZATION CHART ——— */
-    #organizasyon .org-chart ul {
-      padding-top: 2rem; position: relative;
-      text-align: center;
+   /* =============== ORGANİZASYON ŞEMASI =============== */
+    :root {
+      --node-bg:        #5383e8;
+      --connector-col:  #bbb;
     }
-    #organizasyon .org-chart li {
-      display: inline-block;
-      vertical-align: top;
-      list-style: none;
-      padding: .5rem 1rem;
-      margin: 0 1rem;
-      background: var(--accent);
-      color: var(--white);
-      border-radius: 4px;
-      position: relative;
+    #organizasyon { background:#fafafa; }
+    #organizasyon .uk-heading-line span {
+      background: #fafafa; padding:0 1rem;
     }
-    /* connectors */
-    #organizasyon .org-chart li::before,
-    #organizasyon .org-chart li::after {
-      content: '';
-      position: absolute; top: 0;
-      width: 50%; height: 1rem;
-      border-top: 2px solid #ccc;
+    .org-chart { overflow-x:auto; padding:1rem; }
+    .org-chart ul {
+      position:relative; padding-top:20px; white-space:nowrap;
+      margin:0; list-style:none;
     }
-    #organizasyon .org-chart li::before {
-      left: -50%; border-right: 2px solid #ccc;
+    .org-chart li {
+      display:inline-block; vertical-align:top; text-align:center;
+      position:relative; padding:20px 10px 0;
     }
-    #organizasyon .org-chart li::after {
-      right: -50%; border-left: 2px solid #ccc;
+    .org-chart li::before, .org-chart li::after {
+      content:''; position:absolute; top:0; width:50%; height:20px;
+      border-top:2px solid var(--connector-col);
     }
-    #organizasyon .org-chart li:first-child::before,
-    #organizasyon .org-chart li:last-child::after {
-      border: none;
+    .org-chart li::before { left:0; border-right:2px solid var(--connector-col); }
+    .org-chart li::after  { right:0; border-left:2px solid var(--connector-col); }
+    .org-chart li:only-child::before, .org-chart li:only-child::after { display:none; }
+    .org-chart li:only-child { padding-top:0; }
+    .org-chart li:first-child::before, .org-chart li:last-child::after { border:none; }
+    .org-chart ul ul::before {
+      content:''; position:absolute; top:0; left:50%; width:0; height:20px;
+      border-left:2px solid var(--connector-col);
     }
-    #organizasyon .org-chart ul ul {
-      padding-top: 2rem; position: relative;
-    }
-    #organizasyon .org-chart ul ul::before {
-      content: '';
-      position: absolute; top: 0; left: 50%;
-      border-left: 2px solid #ccc; width: 0; height: 1rem;
+    .org-chart .node {
+      display:inline-block; padding:8px 14px; margin:0 auto;
+      border-radius:6px; background:var(--node-bg); color:#fff;
+      font-size:14px; white-space:nowrap; box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      min-width:140px;
     }
 
     /* ——— CONTACT & FOOTER ——— */
