@@ -40,7 +40,9 @@
       height: 40px;
     }
     .topbar nav ul {
-      display: flex; gap: 2rem; list-style: none;
+      display: flex;
+      gap: 2rem;
+      list-style: none;
     }
     .topbar nav a {
       font-weight: 600; transition: color .3s;
@@ -51,6 +53,22 @@
     .toggle-btn {
       display: none; font-size: 1.5rem;
       cursor: pointer; color: var(--primary);
+    }
+
+    /* mobile-menu açıldığında eklenecek sınıf */
+    .topbar nav.mobile-open {
+      display: flex !important;
+      flex-direction: column !important;
+      position: absolute;
+      top: 72px;
+      right: 2rem;
+      background: rgba(255,255,255,0.95);
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .topbar nav.mobile-open ul {
+      flex-direction: column;
+      gap: 1rem;
     }
 
     /* ——— HERO ——— */
@@ -194,7 +212,7 @@
       background: #b6855e;
     }
 
-   /* =============== ORGANİZASYON ŞEMASI =============== */
+    /* =============== ORGANİZASYON ŞEMASI =============== */
     :root {
       --node-bg:        #5383e8;
       --connector-col:  #bbb;
@@ -290,7 +308,7 @@
 
   <!-- HERO -->
   <section id="hero">
-    <img src="images/hero.jpg" alt="Klinik Ortamı">
+    <img src="images/klinikk1.jpg" alt="Klinik Ortamı">
     <div class="hero-content">
       <h1>Yenilikçi Ağız & Diş Merkezi</h1>
       <p>Konforlu, güvenli ve estetik tedavi çözümleriyle sağlıklı gülüşler.</p>
@@ -362,77 +380,75 @@
     </div>
   </section>
 
-  <!-- ========== ORGANİZASYON ŞEMASI ========== -->
-  <section id="organizasyon">
-    <div class="container">
-      <h2 class="uk-heading-line uk-text-center"><span>Organizasyon Şeması</span></h2>
-      <div class="org-chart">
-        <ul>
-          <li>
-            <div class="node">Yönetim Kurulu</div>
-            <ul>
-              <li>
-                <div class="node">Mesul Müdür</div>
-                <ul>
-                  <li>
-                    <div class="node">Kalite Yönetim Sorumlusu</div>
-                    <ul>
-                      <li><div class="node">Bölüm Kal. Yön. Sor.</div></li>
-                      <li><div class="node">Komite ve Ekipler</div></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div class="node">Hasta Hakları Sorumlusu</div>
-                    <ul>
-                      <li><div class="node">Hasta Hakları Personeli</div></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div class="node">İdari İşler Sorumlusu</div>
-                    <ul>
-                      <li><div class="node">Tıbbi Atık Toplama Sorumlusu</div></li>
-                      <li><div class="node">Temizlik Personeli</div></li>
-                      <li><div class="node">Güvenlik Personeli</div></li>
-                      <li><div class="node">Danışma Personeli</div></li>
-                      <li><div class="node">Bakım Personeli</div></li>
-                      <li><div class="node">Arşiv Sorumlusu</div></li>
-                      <li><div class="node">İlaç Yönetim Sorumlusu</div></li>
-                      <li><div class="node">Sarf Malzeme Depo Takip Sorumlusu</div></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div class="node">Klinik Hizmet Sorumlusu</div>
-                    <ul>
-                      <li>
-                        <div class="node">Diş Hekimi</div>
-                        <ul>
-                          <li><div class="node">Hemşire</div></li>
-                          <li><div class="node">Radyoloji Teknikeri</div></li>
-                          <li><div class="node">Diş Hekimi Asistanı</div></li>
-                          <li><div class="node">Ağız ve Diş Sağlığı Teknikeri</div></li>
-                        </ul>
-                      </li>
-                      <li>
-                        <div class="node">Anestezi ve Reanimasyon Uzmanı</div>
-                        <ul>
-                          <li><div class="node">Anestezi Teknisyeni</div></li>
-                          <li><div class="node">Enfeksiyon Hemşiresi</div></li>
-                        </ul>
-                      </li>
-                      <li>
-                        <div class="node">Sterilizasyon Sorumlusu</div>
-                        <ul>
-                          <li><div class="node">Sterilizasyon Personeli</div></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <!-- ORGANİZASYON ŞEMASI -->
+  <section id="organizasyon" class="section">
+    <h2>Organizasyon Şeması</h2>
+    <div class="org-chart">
+      <ul>
+        <li>
+          <div class="node">Yönetim Kurulu</div>
+          <ul>
+            <li>
+              <div class="node">Mesul Müdür</div>
+              <ul>
+                <li>
+                  <div class="node">Kalite Yönetim Sorumlusu</div>
+                  <ul>
+                    <li><div class="node">Bölüm Kal. Yön. Sor.</div></li>
+                    <li><div class="node">Komite ve Ekipler</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node">Hasta Hakları Sorumlusu</div>
+                  <ul>
+                    <li><div class="node">Hasta Hakları Personeli</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node">İdari İşler Sorumlusu</div>
+                  <ul>
+                    <li><div class="node">Tıbbi Atık Toplama Sorumlusu</div></li>
+                    <li><div class="node">Temizlik Personeli</div></li>
+                    <li><div class="node">Güvenlik Personeli</div></li>
+                    <li><div class="node">Danışma Personeli</div></li>
+                    <li><div class="node">Bakım Personeli</div></li>
+                    <li><div class="node">Arşiv Sorumlusu</div></li>
+                    <li><div class="node">İlaç Yönetim Sorumlusu</div></li>
+                    <li><div class="node">Sarf Malzeme Depo Takip Sorumlusu</div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node">Klinik Hizmet Sorumlusu</div>
+                  <ul>
+                    <li>
+                      <div class="node">Diş Hekimi</div>
+                      <ul>
+                        <li><div class="node">Hemşire</div></li>
+                        <li><div class="node">Radyoloji Teknikeri</div></li>
+                        <li><div class="node">Diş Hekimi Asistanı</div></li>
+                        <li><div class="node">Ağız ve Diş Sağlığı Teknikeri</div></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div class="node">Anestezi ve Reanimasyon Uzmanı</div>
+                      <ul>
+                        <li><div class="node">Anestezi Teknisyeni</div></li>
+                        <li><div class="node">Enfeksiyon Hemşiresi</div></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div class="node">Sterilizasyon Sorumlusu</div>
+                      <ul>
+                        <li><div class="node">Sterilizasyon Personeli</div></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -471,29 +487,18 @@
         e.preventDefault();
         document.querySelector(a.getAttribute('href'))
           .scrollIntoView({behavior:'smooth'});
-        // close mobile menu
+        // mobil menüyü kapat
         if (window.innerWidth < 900) {
-          document.querySelector('header nav').style.display = 'none';
+          document.querySelector('header nav').classList.remove('mobile-open');
         }
       });
     });
 
-    // Mobile toggle
+    // Mobil menü toggle
     const toggle = document.querySelector('.toggle-btn');
     const nav    = document.querySelector('header nav');
     toggle.addEventListener('click', ()=>{
-      if (nav.style.display==='flex') {
-        nav.style.display = 'none';
-      } else {
-        nav.style.display = 'flex';
-        nav.style.flexDirection = 'column';
-        nav.style.background = 'rgba(255,255,255,0.95)';
-        nav.style.position = 'absolute';
-        nav.style.top = '72px';
-        nav.style.right = '2rem';
-        nav.style.padding = '1rem';
-        nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-      }
+      nav.classList.toggle('mobile-open');
     });
   </script>
 </body>
