@@ -137,6 +137,71 @@
       vertical-align: middle;
       color: var(--accent);
     }
+    /* ====== ORG-CHART CSS ====== */
+.org-chart {
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+.tree ul {
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.5s;
+  margin: 0;
+}
+.tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+}
+.tree li::before,
+.tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 1px solid #bbb;
+  width: 50%;
+  height: 20px;
+}
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 1px solid #bbb;
+}
+.tree li:only-child::after,
+.tree li:only-child::before {
+  display: none;
+}
+.tree li:only-child {
+  padding-top: 0;
+}
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: none;
+}
+.tree ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid #bbb;
+  width: 0;
+  height: 20px;
+}
+.node {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
+
   </style>
 </head>
 <body>
