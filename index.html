@@ -8,7 +8,6 @@
   <!-- UIkit CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css" />
 
-  <!-- Tek Dosya İçin Gömülü Stil -->
   <style>
     :root {
       --accent: #8a7c66;
@@ -25,12 +24,14 @@
       scroll-behavior: smooth;
     }
 
-    /* NAVBAR */
-    .uk-navbar-container {
+    /* NAVBAR: her zaman görünür, gizlenme yok */
+    nav.uk-navbar-container {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
       background: #fff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: fixed;
-      width: 100%;
       z-index: 1000;
     }
     .uk-navbar-container .uk-logo img {
@@ -43,16 +44,14 @@
     .uk-navbar-nav > li > a:hover {
       color: var(--accent);
     }
-    /* Mobil toggle rengini accent yaptık */
     .uk-navbar-toggle-icon > svg {
       stroke: var(--accent);
     }
 
     /* HERO */
     #hero {
-      margin-top: 70px; /* navbar yüksekliği kadar boşluk */
-      position: relative;
-      background: url('images/hero.jpg') center/cover no-repeat;
+      margin-top: 70px;
+      background: url('images/klinik1.jpg') center/cover no-repeat;
       height: calc(100vh - 70px);
       display: flex;
       align-items: center;
@@ -64,6 +63,7 @@
       position: absolute;
       inset: 0;
       background: rgba(0,0,0,0.4);
+      z-index: 0;
     }
     #hero .uk-container {
       position: relative;
@@ -109,7 +109,7 @@
       .section-heading span::after { display: none; }
     }
 
-    /* Kart İkonları */
+    /* Hizmet Kartları */
     .hizmet-icon {
       font-size: 2rem;
       color: var(--accent);
@@ -127,7 +127,7 @@
       transform: scale(1.03);
     }
 
-    /* Randevu ve İletişim */
+    /* Form ve İletişim */
     #randevu .uk-input,
     #randevu .uk-button-primary {
       border-radius: 4px;
@@ -144,7 +144,7 @@
   <!-- NAVBAR -->
   <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
-      <a href="#" class="uk-navbar-item uk-logo">
+      <a href="#hero" class="uk-navbar-item uk-logo">
         <img src="images/logo.png" alt="Rodent Klinik Logo">
       </a>
     </div>
@@ -189,7 +189,7 @@
   <section id="hero">
     <div class="uk-container">
       <h1>Rodent Ağız ve Diş Sağlığı</h1>
-      <p>Sağlığınıza konfor katıyoruz</p>
+      <p>Sağlığınıza konfor katıyoruz. Modern ekipmanlarımız ve uzman kadromuz var.</p>
       <a href="#hizmetler" class="uk-button uk-button-primary uk-button-large">Hizmetlerimizi İncele</a>
     </div>
   </section>
@@ -198,7 +198,9 @@
   <section id="hakkimizda" class="uk-section uk-section-default">
     <div class="uk-container">
       <h2 class="section-heading"><span>Hakkımızda</span></h2>
-      <p>Polikliniğimiz, diş hekimliğinin tüm branşlarının uygulandığı bir merkezdir.</p>
+      <p>1998 yılından bu yana İstanbul’un kalbinde, diş hekimliğinin tüm branşlarında hizmet veriyoruz. 
+      Polikliniğimiz, hijyen ve hasta konforunu birinci öncelik kabul eder. 
+      Alanında uzman doktor kadromuz ve güler yüzlü destek ekibimizle her adımda yanınızdayız.</p>
     </div>
   </section>
 
@@ -206,57 +208,73 @@
   <section id="vizyon" class="uk-section">
     <div class="uk-container">
       <h2 class="section-heading"><span>Vizyon &amp; Misyon</span></h2>
-      <div class="uk-grid uk-child-width-1-2@m" uk-grid>
+      <div class="uk-grid uk-child-width-1-2@m uk-grid-small" uk-grid>
         <div>
           <h3>Vizyon</h3>
-          <p>En ileri teknolojiyi kullanarak hastalarımıza konforlu ve güvenli tedavi sunmak.</p>
+          <ul>
+            <li>En ileri teknolojiyi kullanmak</li>
+            <li>Hasta konforunu maksimuma çıkarmak</li>
+            <li>Hijyen ve kalite standartlarını belirlemek</li>
+          </ul>
         </div>
         <div>
           <h3>Misyon</h3>
-          <p>Hasta memnuniyetini her zaman en üst seviyede tutmak ve doğal diş yapılarını korumak.</p>
+          <ul>
+            <li>Her tedavide memnuniyeti ön planda tutmak</li>
+            <li>Doğal diş yapınızı koruyarak estetik sonuçlar sağlamak</li>
+            <li>Toplum sağlığına katkıda bulunmak</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- HİZMETLERİMİZ -->
-  <section id="hizmetler" class="uk-section uk-section-muted hizmetler">
+  <section id="hizmetler" class="uk-section uk-section-muted">
     <div class="uk-container">
       <h2 class="section-heading"><span>Hizmetlerimiz</span></h2>
       <div uk-grid class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid-small">
+        <!-- mevcut 5 karta ek olarak 1 yeni kart -->
         <div>
           <div class="uk-card uk-card-default uk-card-body uk-text-center">
             <span class="hizmet-icon" uk-icon="icon: tooth"></span>
             <h3>İmplant</h3>
-            <p>Kalıcı diş kökü çözümü.</p>
+            <p>Kalıcı diş kökü çözümüyle eksik diş problemlerine son.</p>
           </div>
         </div>
         <div>
           <div class="uk-card uk-card-default uk-card-body uk-text-center">
             <span class="hizmet-icon" uk-icon="icon: paint-brush"></span>
             <h3>Porselen Kaplama</h3>
-            <p>Estetik ve dayanıklı.</p>
+            <p>Doğal görünümlü, dayanıklı restorasyon.</p>
           </div>
         </div>
         <div>
           <div class="uk-card uk-card-default uk-card-body uk-text-center">
             <span class="hizmet-icon" uk-icon="icon: sun"></span>
             <h3>Diş Beyazlatma</h3>
-            <p>Şeffaf plak ve lazer.</p>
-          </div>
-        </div>
-        <div>
-          <div class="uk-card uk-card-default uk-card-body uk-text-center">
-            <span class="hizmet-icon" uk-icon="icon: smile"></span>
-            <h3>Ortodonti</h3>
-            <p>Tel tedavisi ve şeffaf apareyler.</p>
+            <p>Lazer ve plak yöntemleriyle hızlı sonuç.</p>
           </div>
         </div>
         <div>
           <div class="uk-card uk-card-default uk-card-body uk-text-center">
             <span class="hizmet-icon" uk-icon="icon: medical-bag"></span>
             <h3>Kanal Tedavisi</h3>
-            <p>Ağrısız kök kanal tedavisi.</p>
+            <p>Ağrısız, modern kök kanal çözümleri.</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <span class="hizmet-icon" uk-icon="icon: smile"></span>
+            <h3>Ortodonti</h3>
+            <p>Tel tedavisi ve şeffaf apareylerle hizalama.</p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-card uk-card-default uk-card-body uk-text-center">
+            <span class="hizmet-icon" uk-icon="icon: heart"></span>
+            <h3>Diş Eti Tedavisi</h3>
+            <p>Periodontal sorunlara profesyonel yaklaşım.</p>
           </div>
         </div>
       </div>
@@ -320,5 +338,6 @@
   <!-- UIkit JS + Icons -->
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js"></script>
+
 </body>
 </html>
