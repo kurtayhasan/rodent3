@@ -4,329 +4,278 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Rodent Ağız & Diş Sağlığı</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;600;800&display=swap" rel="stylesheet">
   <style>
-    /* ===== Global ===== */
+    /* ——————— GLOBAL ——————— */
     :root {
-      --clr-bg:       #f9f7f3;
-      --clr-white:    #ffffff;
-      --clr-dark:     #222222;
-      --clr-accent:   #e7cfa3;
-      --clr-highlight:#3a8fb7;
-      --ff:           'Poppins', sans-serif;
+      --bg: #faf9f7;
+      --primary: #2c3e50;
+      --accent: #e0b084;
+      --white: #fff;
+      --shadow: rgba(0,0,0,0.08);
+      --font: 'Mulish', sans-serif;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: var(--ff);
-      color: var(--clr-dark);
-      background: var(--clr-bg);
-      line-height: 1.6;
-    }
+    body { background: var(--bg); color: var(--primary); font-family: var(--font); line-height:1.5; }
+    a { color: inherit; text-decoration:none; }
     img { display:block; max-width:100%; height:auto; }
-    a { text-decoration:none; color:inherit; }
 
-    /* ===== Navbar ===== */
+    /* ——————— LAYOUT & GRID ——————— */
+    .container { width:90%; max-width:1200px; margin:0 auto; }
+    .grid { display:grid; gap:2rem; }
+    .grid-2 { grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); }
+    .section { padding:4rem 0; position:relative; }
+
+    /* ——————— SIDEBAR NAV ——————— */
     header {
-      position: sticky; top:0; z-index:50;
-      background: var(--clr-white);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: fixed; top:0; left:0; height:100vh; width:80px;
+      background: var(--primary); display:flex; align-items:center; justify-content:center;
+      z-index:100;
     }
-    .nav-wrap { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; }
-    .nav-wrap .logo img { height:40px; }
-    nav ul {
-      display:flex; gap:1.5rem;
-      list-style:none;
+    header nav ul {
+      list-style:none; writing-mode: vertical-rl;
+      transform: rotate(180deg);
     }
-    nav li { position: relative; }
-    nav a {
-      font-weight:500; padding:0.25rem 0;
+    header nav li { margin:1.5rem 0; }
+    header nav a {
+      font-size: 0.85rem; font-weight:600;
+      color: var(--bg); display:inline-block;
       transition: color .3s;
     }
-    nav a:hover { color: var(--clr-highlight); }
-    .burger {
-      display:none; font-size:1.5rem; cursor:pointer;
-    }
+    header nav a:hover { color: var(--accent); }
 
-    /* ===== Hero ===== */
+    /* ——————— HERO ——————— */
     #hero {
-      position: relative; height:80vh;
-      background: url('images/hero.jpg') center/cover no-repeat;
-      display:flex; align-items:center; justify-content:center;
-      text-align:center; color:var(--clr-white);
+      margin-left:80px; height:100vh; overflow:hidden;
+      position:relative; background: var(--primary);
+      color: var(--white);
     }
-    #hero::before {
-      content:''; position:absolute; inset:0;
-      background: rgba(0,0,0,0.4);
-    }
-    #hero .hero-inner {
+    #hero img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; opacity:0.4; }
+    #hero .hero-content {
       position:relative; z-index:1;
-      max-width:700px; padding:0 1rem;
+      height:100%; display:flex; flex-direction:column;
+      align-items:flex-start; justify-content:center;
+      padding:0 5rem;
     }
     #hero h1 {
-      font-size:3rem; margin-bottom:1rem;
-      text-shadow:0 2px 8px rgba(0,0,0,0.6);
+      font-size:3.5rem; font-weight:800; margin-bottom:1rem;
     }
     #hero p {
-      font-size:1.125rem; margin-bottom:1.5rem;
+      font-size:1.125rem; margin-bottom:2rem; max-width:600px;
     }
-    .btn-hero {
-      display:inline-block; background: var(--clr-highlight);
-      color: var(--clr-white); padding:0.75rem 1.5rem;
-      border-radius:4px; font-weight:500;
+    .btn { 
+      display:inline-block; padding:0.75rem 1.5rem; 
+      background: var(--accent); color:var(--primary);
+      font-weight:600; border-radius:4px;
       transition: background .3s;
     }
-    .btn-hero:hover { background: #286d8a; }
+    .btn:hover { background: #b6855e; }
 
-    /* ===== Sections ===== */
-    .container { width:90%; max-width:1200px; margin:0 auto; }
+    /* ——————— ABOUT (SPLIT) ——————— */
+    #about {
+      display:flex; align-items:center;
+      margin-left:80px;
+    }
+    #about .text, #about .image {
+      flex:1; padding:1rem;
+    }
+    #about h2 { font-size:2rem; margin-bottom:1rem; }
+    #about p { font-size:1rem; color:#444; }
+    
+    /* ——————— ZIG-ZAG SECTIONS ——————— */
+    .zigzag {
+      display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:2rem;
+      margin-left:80px;
+    }
+    .zigzag:nth-child(even) { grid-template-areas:"img text"; }
+    .zigzag:nth-child(odd)  { grid-template-areas:"text img"; }
+    .zigzag .text { grid-area:text; }
+    .zigzag .img  { grid-area:img; }
+    .zigzag img { border-radius:8px; box-shadow:0 6px 20px var(--shadow); }
 
-    /* About */
-    #about { padding:4rem 0; }
-    #about .box {
-      background: var(--clr-white); padding:2rem;
-      border-left:6px solid var(--clr-accent);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    }
+    .zigzag h3 { font-size:1.75rem; margin-bottom:0.75rem; }
+    .zigzag p { color:#555; }
 
-    /* Vision & Mission */
-    #vision {
-      background: var(--clr-accent);
-      padding:4rem 0; color: var(--clr-dark);
+    /* ——————— GALLERY MASONRY ——————— */
+    #gallery { margin-left:80px; }
+    .masonry {
+      column-count:3; column-gap:1rem;
     }
-    #vision .cards {
-      display:grid; grid-template-columns:1fr 1fr; gap:2rem;
+    .masonry img {
+      width:100%; margin-bottom:1rem;
+      border-radius:8px; transition: transform .3s;
     }
-    #vision .card {
-      background: var(--clr-white); padding:1.5rem;
-      border-radius:8px; text-align:center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    #vision .card h3 { margin-bottom:0.75rem; font-weight:600; }
+    .masonry img:hover { transform:scale(1.02); }
 
-    /* Services */
-    #services { padding:4rem 0; }
-    #services .cards {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:2rem;
+    /* ——————— RANDEVU (OVERLAY) ——————— */
+    #appointment {
+      position:relative; margin-left:80px; height:60vh;
     }
-    #services .card {
-      position:relative; overflow:hidden;
-      background: var(--clr-white); border-radius:8px;
-      padding:2rem 1rem 1rem;
-      text-align:center; transition: transform .3s;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.02);
-    }
-    #services .card::before {
-      content:'';
-      position:absolute; top:0; left:0; right:0; height:60%;
-      background: var(--clr-highlight) url('images/clinic-icon.svg') center/contain no-repeat;
-      opacity:0.2;
-    }
-    #services .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    }
-    #services .card h4 {
-      margin-top:6rem; margin-bottom:0.5rem;
-      font-weight:600;
-    }
-    #services .card p { font-size:0.95rem; color:#555; }
-
-    /* Gallery */
-    #gallery { padding:4rem 0; }
-    #gallery .grid {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem;
-    }
-    #gallery .grid img {
-      border-radius:8px; cursor:pointer;
-      transition: transform .3s, box-shadow .3s;
-    }
-    #gallery .grid img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-
-    /* Appointment */
-    #appointment { background:#fff; padding:4rem 0; }
-    #appointment .form-wrap {
-      background: var(--clr-accent); padding:2rem;
-      border-radius:8px; max-width:480px; margin:0 auto;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+    #appointment img { position:absolute; inset:0; object-fit:cover; opacity:0.3; }
+    #appointment .form-box {
+      position:relative; z-index:1; top:50%; transform:translateY(-50%);
+      background: var(--white); padding:2rem; max-width:400px;
+      margin:0 auto; border-radius:8px; box-shadow:0 8px 24px var(--shadow);
     }
     #appointment input, #appointment button {
-      width:100%; padding:0.75rem; margin-bottom:1rem;
-      border: none; border-radius:4px; font-size:1rem;
+      width:100%; padding:0.75rem; margin-bottom:1rem; border:1px solid #ddd; border-radius:4px;
     }
-    #appointment input { background:#fff; }
     #appointment button {
-      background: var(--clr-highlight); color:#fff;
-      font-weight:500; cursor:pointer; transition: background .3s;
+      background: var(--primary); color:var(--white); border:none;
+      font-weight:600; cursor:pointer;
     }
-    #appointment button:hover { background: #286d8a; }
+    #appointment button:hover { opacity:0.9; }
 
-    /* Organizational Chart */
-    #organizasyon { padding:4rem 0; }
-    .org-wrap { overflow-x:auto; padding-bottom:2rem; }
-    .org-wrap ul {
-      margin:0; padding:0; display:flex; justify-content:center;
-      list-style:none; position: relative;
+    /* ——————— ORGANİZASYON ——————— */
+    #organizasyon {
+      background: var(--white); margin-left:80px; padding-bottom:4rem;
     }
-    .org-wrap li {
-      text-align:center; padding:1rem 0;
-      position: relative; min-width:140px;
-      margin:0 1rem;
-    }
-    .org-wrap li + li::before {
-      content:''; position:absolute;
-      top:0; left:-1rem; width:2rem; height:2px;
-      background: var(--clr-dark);
+    .org-chart {
+      display:flex; flex-wrap:wrap; justify-content:center; gap:2rem;
     }
     .org-node {
-      display:inline-block; padding:0.75rem 1rem;
-      background: var(--clr-highlight); color:#fff;
-      border-radius:6px; font-weight:500;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: var(--accent); color:var(--primary);
+      padding:0.75rem 1.25rem; border-radius:6px;
+      box-shadow:0 4px 12px var(--shadow); font-weight:600;
+      text-align:center;
     }
-    .org-children {
-      margin-top:1.5rem; display:flex; justify-content:center;
-      gap:1.5rem;
-    }
-    /* Nested */
-    .org-children .org-children {
-      flex-direction:column; align-items:center;
-      gap:1rem; margin-top:1rem;
+    .org-level { display:flex; gap:2rem; justify-content:center; margin-bottom:2rem; }
+    .connector {
+      flex:1; border-top:2px solid var(--primary); margin:0.75rem 1rem;
     }
 
-    /* Contact */
-    #contact { background: var(--clr-accent); padding:4rem 0; color: var(--clr-dark); }
+    /* ——————— CONTACT FOOTER ——————— */
+    #contact {
+      background: var(--primary); color:var(--white);
+      padding:2rem 0; margin-left:80px;
+    }
     #contact .info {
-      display:grid; grid-template-columns:1fr 1fr; gap:2rem;
+      display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem;
+      justify-items:center;
     }
     #contact .info div {
-      background: var(--clr-white); padding:1rem 1.5rem;
-      border-radius:6px; display:flex; align-items:center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align:center;
     }
-    #contact .info i {
-      font-size:1.5rem; color: var(--clr-highlight);
-      margin-right:1rem;
+    #contact i {
+      display:block; font-size:1.5rem; margin-bottom:0.5rem;
+      color:var(--accent);
     }
-
-    /* Footer */
     footer {
-      text-align:center; padding:1.5rem 0; background: var(--clr-dark);
-      color: var(--clr-white); font-size:0.9rem;
+      text-align:center; padding:1rem 0; background:#222; color:#aaa;
+      font-size:0.85rem; margin-left:80px;
     }
 
-    /* Responsive */
+    /* ——————— RESPONSIVE ——————— */
     @media(max-width:900px) {
-      nav ul { display:none; position:absolute; top:70px; right:2rem; background:#fff; flex-direction:column; gap:1rem; padding:1rem; border-radius:6px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-      nav ul.show { display:flex; }
-      .burger { display:block; }
-      #vision .cards { grid-template-columns:1fr; }
+      header { width:60px; }
+      #hero .hero-content { padding:0 2rem; }
+      #about { flex-direction:column; }
+      .zigzag { grid-template-columns:1fr; }
+      .masonry { column-count:2; }
       #contact .info { grid-template-columns:1fr; }
-      .org-wrap ul { flex-direction:column; gap:2rem; }
-      .org-wrap li + li::before { display:none; }
+    }
+    @media(max-width:600px) {
+      .masonry { column-count:1; }
     }
   </style>
+  <!-- font-awesome için (iconlar) -->
+  <script src="https://kit.fontawesome.com/your-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- SIDEBAR NAV -->
   <header>
-    <div class="nav-wrap container">
-      <div class="logo"><a href="#hero"><img src="images/logo.png" alt="Logo"></a></div>
-      <i class="fas fa-bars burger"></i>
-      <nav>
-        <ul>
-          <li><a href="#about">Hakkımızda</a></li>
-          <li><a href="#vision">Vizyon &amp; Misyon</a></li>
-          <li><a href="#services">Hizmetlerimiz</a></li>
-          <li><a href="#gallery">Galeri</a></li>
-          <li><a href="#appointment">Randevu Al</a></li>
-          <li><a href="#organizasyon">Organizasyon</a></li>
-          <li><a href="#contact">İletişim</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Anasayfa</a></li>
+        <li><a href="#about">Hakkımızda</a></li>
+        <li><a href="#services-1">Vizyon</a></li>
+        <li><a href="#services-2">Misyon</a></li>
+        <li><a href="#services-3">Hizmetler</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#appointment">Randevu</a></li>
+        <li><a href="#organizasyon">Organizasyon</a></li>
+        <li><a href="#contact">İletişim</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-inner">
-      <h1>Rodent Ağız &amp; Diş Sağlığı</h1>
-      <p>Gülüşünüzü yeniden keşfedin — kaliteli, konforlu ve güvenli tedavi deneyimi.</p>
-      <a href="#services" class="btn-hero">Hizmetlerimizi Görüntüle</a>
+    <img src="images/klinik1.jpg" alt="">
+    <div class="hero-content">
+      <h1>Yenilikçi Ağız & Diş Merkezi</h1>
+      <p>Konforlu, güvenli ve estetik tedavi çözümleriyle sağlıklı gülüşler.</p>
+      <a href="#about" class="btn">Başlayalım</a>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="container">
-    <h2>Hakkımızda</h2>
-    <div class="box">
-      <p>Polikliniğimiz, diş hekimliğinin tüm branşlarında estetik, cerrahi ve koruyucu tedavileri bir arada sunan, hasta memnuniyetini her zaman ön planda tutan bir sağlık merkezidir.</p>
+  <section id="about" class="section container">
+    <div class="text">
+      <h2>Hakkımızda</h2>
+      <p>Polikliniğimizde tüm diş hekimliği branşlarında profesyonel ekip
+      ve son teknoloji cihazlarla size özel çözümler sunuyoruz.</p>
+    </div>
+    <div class="image">
+      <img src="images/org-semasi.png" alt="Organizasyon Şeması Örneği">
     </div>
   </section>
 
-  <!-- VISION & MISSION -->
-  <section id="vision">
+  <!-- VISION / MISSION / SERVICES (ZIG-ZAG) -->
+  <section id="services-1" class="section container zigzag">
+    <div class="text">
+      <h3>Vizyonumuz</h3>
+      <p>Türkiye’de referans gösterilen, teknolojik altyapıyla donanımlı bir merkez olmak.</p>
+    </div>
+    <div class="img">
+      <img src="images/galeri1.jpg" alt="">
+    </div>
+  </section>
+
+  <section id="services-2" class="section container zigzag">
+    <div class="text">
+      <h3>Misyonumuz</h3>
+      <p>Şeffaf, etik ve hasta odaklı hizmet anlayışımızla her gülüşü yenilemek.</p>
+    </div>
+    <div class="img">
+      <img src="images/galeri2.jpg" alt="">
+    </div>
+  </section>
+
+  <section id="services-3" class="section container zigzag">
+    <div class="text">
+      <h3>Hizmetlerimiz</h3>
+      <ul>
+        <li>İmplant & Full çene rekonstrüksiyon</li>
+        <li>Diş Beyazlatma & Estetik</li>
+        <li>Porselen Kaplamalar</li>
+        <li>Kanal Tedavisi (Ağrısız Protokol)</li>
+        <li>Radyografi & Tomografi</li>
+      </ul>
+    </div>
+    <div class="img">
+      <img src="images/galeri3.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- GALLERY MASONRY -->
+  <section id="gallery" class="section">
     <div class="container">
-      <h2>Vizyon &amp; Misyon</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Vizyon</h3>
-          <p>En ileri teknolojiyi kullanarak konforlu ve güvenli tedavi standartları oluşturmak.</p>
-        </div>
-        <div class="card">
-          <h3>Misyon</h3>
-          <p>Şeffaf, etik ve hasta odaklı hizmet anlayışımızla sağlıklı gülüşler yaratmak.</p>
-        </div>
+      <h2>Galeri</h2>
+      <div class="masonry">
+        <img src="images/galeri1.jpg">
+        <img src="images/galeri2.jpg">
+        <img src="images/galeri3.jpg">
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="container">
-    <h2>Hizmetlerimiz</h2>
-    <div class="cards">
-      <div class="card">
-        <h4>İmplant</h4>
-        <p>Kalıcı diş kökü çözümüyle eksiksiz gülüşler.</p>
-      </div>
-      <div class="card">
-        <h4>Diş Beyazlatma</h4>
-        <p>Gelişmiş lazer ve plak teknikleri.</p>
-      </div>
-      <div class="card">
-        <h4>Porselen Kaplama</h4>
-        <p>Üstün estetik, doğal görünüm.</p>
-      </div>
-      <div class="card">
-        <h4>Kanal Tedavisi</h4>
-        <p>Ağrısız ve güvenli kök kanal işlemleri.</p>
-      </div>
-      <div class="card">
-        <h4>Radyoloji</h4>
-        <p>Detaylı diş ve çene görüntüleme.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="container">
-    <h2>Galeri</h2>
-    <div class="grid">
-      <img src="images/galeri1.jpg" alt="Galeri 1">
-      <img src="images/galeri2.jpg" alt="Galeri 2">
-      <img src="images/galeri3.jpg" alt="Galeri 3">
-    </div>
-  </section>
-
-  <!-- APPOINTMENT -->
-  <section id="appointment" class="container">
-    <h2>Randevu Al</h2>
-    <div class="form-wrap">
+  <!-- RANDEVU OVERLAY -->
+  <section id="appointment">
+    <img src="images/slider1.jpg" alt="">
+    <div class="form-box">
+      <h2>Randevu Alın</h2>
       <input type="text" placeholder="Adınız Soyadınız">
       <input type="tel" placeholder="+90 5__ ___ ____">
       <input type="date">
@@ -334,103 +283,62 @@
     </div>
   </section>
 
-  <!-- ORGANIZASYON -->
-  <section id="organizasyon" class="container">
-    <h2>Organizasyon Şeması</h2>
-    <div class="org-wrap">
-      <ul>
-        <li>
+  <!-- ORGANİZASYON ŞEMASI -->
+  <section id="organizasyon" class="section">
+    <div class="container">
+      <h2>Organizasyon Şeması</h2>
+      <!-- Üst seviye -->
+      <div class="org-chart">
+        <div class="org-level">
           <div class="org-node">Yönetim Kurulu</div>
-          <div class="org-children">
-            <div>
-              <div class="org-node">Mesul Müdür</div>
-              <div class="org-children">
-                <div>
-                  <div class="org-node">Kalite Yönetim Sorumlusu</div>
-                  <div class="org-children">
-                    <div><div class="org-node">Bölüm Kal. Yön. Sor.</div></div>
-                    <div><div class="org-node">Komite ve Ekipler</div></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="org-node">Hasta Hakları Sorumlusu</div>
-                  <div class="org-children">
-                    <div><div class="org-node">Hasta Hakları Personeli</div></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="org-node">İdari İşler Sorumlusu</div>
-                  <div class="org-children">
-                    <div><div class="org-node">Tıbbi Atık Toplama Sorumlusu</div></div>
-                    <div><div class="org-node">Temizlik Personeli</div></div>
-                    <div><div class="org-node">Güvenlik Personeli</div></div>
-                    <div><div class="org-node">Danışma Personeli</div></div>
-                    <div><div class="org-node">Bakım Personeli</div></div>
-                    <div><div class="org-node">Arşiv Sorumlusu</div></div>
-                    <div><div class="org-node">İlaç Yönetim Sorumlusu</div></div>
-                    <div><div class="org-node">Sarf Malzeme Depo Takip</div></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="org-node">Klinik Hizmet Sorumlusu</div>
-                  <div class="org-children">
-                    <div>
-                      <div class="org-node">Diş Hekimi</div>
-                      <div class="org-children">
-                        <div><div class="org-node">Hemşire</div></div>
-                        <div><div class="org-node">Radyoloji Teknikeri</div></div>
-                        <div><div class="org-node">Diş Hekimi Asistanı</div></div>
-                        <div><div class="org-node">Ağız ve Diş Sağ. Tek.</div></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="org-node">Anestezi &amp; Reanimasyon Uzmanı</div>
-                      <div class="org-children">
-                        <div><div class="org-node">Anestezi Teknisyeni</div></div>
-                        <div><div class="org-node">Enfeksiyon Hemşiresi</div></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="org-node">Sterilizasyon Sorumlusu</div>
-                      <div class="org-children">
-                        <div><div class="org-node">Sterilizasyon Personeli</div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+        </div>
+        <div class="org-level">
+          <div class="connector"></div>
+          <div class="org-node">Mesul Müdür</div>
+          <div class="connector"></div>
+        </div>
+      </div>
+      <!-- Alt seviyeler -->
+      <div class="org-chart">
+        <div class="org-node">Kalite Yönetim Sorumlusu</div>
+        <div class="org-node">Hasta Hakları Sorumlusu</div>
+        <div class="org-node">İdari İşler Sorumlusu</div>
+        <div class="org-node">Klinik Hizmet Sorumlusu</div>
+      </div>
+      <!-- Daha derin dallar (örnek) -->
+      <div class="org-chart">
+        <div class="org-node">Bölüm Kal. Yön. Sor.</div>
+        <div class="org-node">Komite ve Ekipler</div>
+        <div class="org-node">Hasta Hakları Personeli</div>
+        <div class="org-node">Tıbbi Atık Toplama Sorumlusu</div>
+        <div class="org-node">Enfeksiyon Hemşiresi</div>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="container">
-    <h2>İletişim</h2>
-    <div class="info">
-      <div><i class="fas fa-map-marker-alt"></i><span>Adres: Örnek Mah. Cad. No:123, İstanbul</span></div>
-      <div><i class="fas fa-phone"></i><span>Telefon: +90 545 502 8282</span></div>
+  <section id="contact">
+    <div class="container">
+      <h2>İletişim</h2>
+      <div class="info">
+        <div><i class="fas fa-map-marker-alt"></i>Örnek Mah. Cad. No:123, İstanbul</div>
+        <div><i class="fas fa-phone"></i>+90 545 502 8282</div>
+        <div><i class="fas fa-envelope"></i>info@rodentdis.com</div>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    &copy; 2025 Rodent Ağız &amp; Diş Sağlığı — Tüm hakları saklıdır.
+    &copy; 2025 Rodent Ağız & Diş Sağlığı — Tüm hakları saklıdır.
   </footer>
 
-  <!-- JS -->
   <script>
-    const burger = document.querySelector('.burger');
-    const navUl  = document.querySelector('nav ul');
-    burger.addEventListener('click', ()=> navUl.classList.toggle('show'));
-    document.querySelectorAll('nav a').forEach(a=>{
-      a.addEventListener('click', e=>{
+    document.querySelectorAll('header nav a').forEach(a=>{
+      a.addEventListener('click',e=>{
         e.preventDefault();
         document.querySelector(a.getAttribute('href'))
-                .scrollIntoView({behavior:'smooth'});
-        if(navUl.classList.contains('show')) navUl.classList.remove('show');
+          .scrollIntoView({behavior:'smooth'});
       });
     });
   </script>
