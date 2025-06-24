@@ -137,72 +137,91 @@
       vertical-align: middle;
       color: var(--accent);
     }
-    /* ====== ORG-CHART CSS ====== */
-.org-chart {
-  width: 100%;
-  overflow-x: auto;
-  padding: 20px 0;
-}
-.tree ul {
-  padding-top: 20px;
-  position: relative;
-  transition: all 0.5s;
-  margin: 0;
-}
-.tree li {
-  float: left;
-  text-align: center;
-  list-style-type: none;
-  position: relative;
-  padding: 20px 5px 0 5px;
-}
-.tree li::before,
-.tree li::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 50%;
-  border-top: 1px solid #bbb;
-  width: 50%;
-  height: 20px;
-}
-.tree li::after {
-  right: auto;
-  left: 50%;
-  border-left: 1px solid #bbb;
-}
-.tree li:only-child::after,
-.tree li:only-child::before {
-  display: none;
-}
-.tree li:only-child {
-  padding-top: 0;
-}
-.tree li:first-child::before,
-.tree li:last-child::after {
-  border: none;
-}
-.tree ul ul::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  border-left: 1px solid #bbb;
-  width: 0;
-  height: 20px;
-}
-.node {
-  display: inline-block;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background: #fff;
-  font-size: 14px;
-  color: #333;
-  white-space: nowrap;
-}
+   <!-- ======================
+     ORGANİZASYON ŞEMASI
+====================== -->
+<style>
+  :root {
+    --node-bg:        #4a90e2;
+    --connector-col:  #bbb;
+  }
 
-  </style>
+  #organizasyon {
+    padding: 60px 0;
+    background: #fafafa;
+  }
+  #organizasyon .uk-heading-line span {
+    background: #fafafa;
+    padding: 0 20px;
+  }
+
+  .org-chart {
+    overflow-x: auto;
+    padding: 0 10px;
+  }
+
+  .org-chart ul {
+    position: relative;
+    margin: 0;
+    padding-top: 20px;
+    white-space: nowrap;
+  }
+  .org-chart li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    list-style: none;
+    padding: 20px 5px 0;
+    position: relative;
+  }
+
+  /* Yatay bağlayıcı çizgiler */
+  .org-chart li::before,
+  .org-chart li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 20px;
+    border-top: 2px solid var(--connector-col);
+  }
+  .org-chart li::before { left: 0; border-right: 2px solid var(--connector-col); }
+  .org-chart li::after  { right: 0; border-left: 2px solid var(--connector-col); }
+
+  /* Tek çocuksa çizgileri gizle */
+  .org-chart li:only-child::before,
+  .org-chart li:only-child::after { display: none; }
+  .org-chart li:only-child { padding-top: 0; }
+
+  /* İlk ve son çocuktan dış çizgileri kaldır */
+  .org-chart li:first-child::before,
+  .org-chart li:last-child::after { border: none; }
+
+  /* Dikey bağlayıcı (alt seviyeyi üste bağlıyor) */
+  .org-chart ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 20px;
+    border-left: 2px solid var(--connector-col);
+  }
+
+  /* Kutu stili */
+  .org-chart .node {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 0 auto;
+    border-radius: 6px;
+    background: var(--node-bg);
+    color: #fff;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-width: 140px;
+  }
+</style>
 </head>
 <body>
 
@@ -403,12 +422,13 @@
   <!-- UIkit JS + Icons -->
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js"></script>
-<!-- ORGANİZASYON ŞEMASI -->
-<section id="organizasyon" class="uk-section uk-section-muted">
+
+
+<section id="organizasyon" class="uk-section">
   <div class="uk-container uk-container-expand">
     <h2 class="uk-heading-line uk-text-center"><span>Organizasyon Şeması</span></h2>
     <div class="org-chart">
-      <ul class="tree">
+      <ul>
         <li>
           <div class="node">Yönetim Kurulu</div>
           <ul>
